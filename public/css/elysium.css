@@ -1,0 +1,40 @@
+body {
+  padding: 20px;
+   background: lightgrey;
+  /*font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;*/
+}
+
+/*a {*/
+  /*color: #00B7FF;*/
+/*}*/
+
+
+h1 { color: #ffffff; font-family: 'Raleway',sans-serif; font-size: 62px; font-weight: 800; line-height: 72px; margin: 0 0 24px; text-align: center; text-transform: uppercase; }
+
+h2 { color: #ffffff; font-family: 'Raleway',sans-serif; font-size: 30px; font-weight: 800; line-height: 36px; margin: 0 0 24px; text-align: center; }
+
+p { color: #f8f8f8; font-family: 'Raleway',sans-serif; font-size: 18px; font-weight: 500; line-height: 32px; margin: 0 0 12px; }
+
+a { color: #c8c8c8; text-decoration: underline; }
+
+a:hover { color: #1c1c1c; text-decoration: underline; }
+
+.projectBox {
+    display: inline-block;
+    float: left;
+    width: 360px;
+    height: 220px;
+    margin: 25px;
+    padding: 20px;
+    background: #428bca;
+    border-width: 10px;
+    border-radius: 10px;
+    border-color: white;
+    border-style: solid;
+    overflow: hidden;
+    box-shadow: 20px 15px 37px rgba(0, 0, 0, 0.06);
+    -webkit-transition: all .2s ease-in-out;
+}
+
+
+.projectBox:hover { -webkit-transform: scale(1.1); }
