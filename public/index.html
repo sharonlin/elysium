@@ -4,11 +4,13 @@
     <title>Elysium</title>
     <meta charset="utf-8">
 
-
-    <link rel="stylesheet" href="libs/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css"/>
+    <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="libs/bootstrap3-dialog/bootstrap-dialog.min.css">
+
     <!--<link rel="stylesheet" href="libs/bootstrap-combobox/bootstrap-combobox.css">-->
-    <!--<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css"/>-->
+
+    <!--<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">-->
 
 
 
@@ -18,15 +20,16 @@
 
     <script src="libs/jquery/jquery.min.js"></script>
     <script src="libs/jquery-bootstrap-wizard/jquery.bootstrap.wizard.min.js"></script>
-    <script src="libs/bootstrap/bootstrap.min.js"></script>
+    <script src="libs/bootstrap/js/bootstrap.min.js"></script>
     <script src="libs/bootstrap3-dialog/bootstrap-dialog.min.js"></script>
     <script src="libs/lodash/lodash.min.js"></script>
     <script src="libs/d3/d3.min.js"></script>
 
+    <link rel="stylesheet" type="text/css" href="libs/loading-bar/loading-bar.css"/>
     <script src="libs/angular-1.2.23/angular.min.js"></script>
     <script src="libs/angular-1.2.23/angular-route.min.js"></script>
     <script src="libs/angular-1.2.23/angular-animate.min.js"></script>
-
+    <script src="libs/loading-bar/loading-bar.min.js"></script>
 
 
     <!--App-->
@@ -44,6 +47,7 @@
     <script src="js/components/tabs/tabs-service.js"></script>
     <script src="js/components/dashboard/service.js"></script>
     <!--<script src="js/core/message-bus/message-bus.js"></script>-->
+    <!--<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css"/>-->
 <head>
 
 
@@ -67,7 +71,7 @@
 <div id="main">
     <div ng-include="'js/components/wizard/wizard.html'" ng-show="isSelected('wizard')" ng-controller="WizardController" class="page {{ pageClass }}" onload="init()"></div>
     <div ng-include="'js/components/dashboard/dashboard.html'" ng-show="isSelected('dashboard')" ng-controller="DashboardController" class="page {{ pageClass }}" onload="init()"></div>
-    <!--<div ng-include="'js/components/reports/reports.html'" ng-show="isSelected('reports')" ng-controller="ReportsController" class="page {{ pageClass }}" onload="init()"></div>-->
+    <div ng-include="'js/components/reports/reports.html'" ng-show="isSelected('reports')" ng-controller="ReportsController" class="page {{ pageClass }}" onload="init()"></div>
 </div>
 
 </body>

@@ -14,11 +14,14 @@ elysiumApp.factory("TabsService",['$rootScope', 'MessageBus', function($rootScop
     function _switchToWizard(){
         MessageBus.emitMsg('tab.wizard');
     }
-
+	function _switchToReport(project){
+		MessageBus.emitMsg('tab.report', project);
+	}
 
 	return {
 		switchToDashboard: _switchToDashboard,
-        switchToWizard: _switchToWizard
+        switchToWizard: _switchToWizard,
+        switchToReport: _switchToReport
 	};
 
 }]);

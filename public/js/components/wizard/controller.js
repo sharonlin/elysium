@@ -5,7 +5,7 @@
  * Time: 2:12 PM
  * To change this template use File | Settings | File Templates.
  */
-elysiumApp.controller('WizardController', ['$scope', "$location", "TabsService", "DashboardService", function ($scope, $location, TabsService, DashboardService) {
+elysiumApp.controller('WizardController', ['$scope','$timeout', "$location", "TabsService", "DashboardService", "cfpLoadingBar", function ($scope,$timeout, $location, TabsService, DashboardService, cfpLoadingBar) {
 
 	//$scope.project = {name:'p100', dbType:'',creator:'Jack Boo', creationDate:'1/1/2014 8:00', lastRunning:'1/2/2014 10:00'};
 
@@ -79,13 +79,18 @@ elysiumApp.controller('WizardController', ['$scope', "$location", "TabsService",
 //		});
 	}
 	function _initProject (){
-		return {creator:'Jfk'};
+		return {creator:'Jfk', dbType:'ALM'};
 	}
 
 	$scope.onWizardFinish = function(){
-		DashboardService.createProject($scope.project);
-		$scope.project = _initProject();
-		TabsService.switchToDashboard();
+		cfpLoadingBar.start();
+		$timeout(function(){
+			DashboardService.createProject($scope.project);
+			$scope.project = _initProject();
+			TabsService.switchToDashboard();
+			cfpLoadingBar.complete();
+		}, 10000);
+
 	}
 	$scope.init();
 

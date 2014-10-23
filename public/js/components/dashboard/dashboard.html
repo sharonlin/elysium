@@ -1,6 +1,19 @@
-<div ng-repeat="project in projects" class = "projectBox">
+<div ng-repeat="project in projects" class = "projectBox" ng-click=>
     <h2>Project {{project.name}}</h2>
     <p>Creator:{{project.creator}}</p>
     <p>Creation Date: {{project.creationDate | date:'dd.MM.yyyy HH:mm'}}</p>
     <p>Last Running: {{project.lastRunning | date:'dd.MM.yyyy HH:mm'}}</p>
+    <div class="projectBoxFooter">
+        <button type="button" class="btn btn-default btn-md" ng-click='runPredict(project);'>
+            <span class="glyphicon glyphicon-play"></span> Predict
+        </button>
+        <button type="button" class="btn btn-default btn-md" ng-click='runTrain(project);'>
+            <span class="glyphicon glyphicon-play"></span> Train
+        </button>
+        <button type="button" class="btn btn-default btn-md" ng-click='openReport(project);'>
+            <span class="glyphicon glyphicon-signal"></span> Report
+        </button>
+        <!--<button ng-click='openReport(project);'>Report</button>-->
+        <!--<button ng-click="runPrediction(project);">Prediction</button>-->
+    </div>
 </div>

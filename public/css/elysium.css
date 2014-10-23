@@ -1,7 +1,7 @@
 body {
   padding: 20px;
    background: lightgrey;
-  /*font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;*/
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 /*a {*/
@@ -9,11 +9,11 @@ body {
 /*}*/
 
 
-h1 { color: #ffffff; font-family: 'Raleway',sans-serif; font-size: 62px; font-weight: 800; line-height: 72px; margin: 0 0 24px; text-align: center; text-transform: uppercase; }
+h1 { color: #ffffff; font-family: 'Raleway',sans-serif; font-size: 62px; font-weight: 800; line-height: 72px; margin: 0 0 12px; text-align: center; text-transform: uppercase; }
 
-h2 { color: #ffffff; font-family: 'Raleway',sans-serif; font-size: 30px; font-weight: 800; line-height: 36px; margin: 0 0 24px; text-align: center; }
+h2 { color: #ffffff; font-family: 'Raleway',sans-serif; font-size: 30px; font-weight: 800; line-height: 36px; margin: 0 0 12px; text-align: center; }
 
-p { color: #f8f8f8; font-family: 'Raleway',sans-serif; font-size: 18px; font-weight: 500; line-height: 32px; margin: 0 0 12px; }
+p { color: #f8f8f8; font-family: 'Raleway',sans-serif; font-size: 18px; font-weight: 500; line-height: 32px; margin: 0 0 6px; }
 
 a { color: #c8c8c8; text-decoration: underline; }
 
@@ -22,8 +22,8 @@ a:hover { color: #1c1c1c; text-decoration: underline; }
 .projectBox {
     display: inline-block;
     float: left;
-    width: 360px;
-    height: 220px;
+    width: 380px;
+    height: 280px;
     margin: 25px;
     padding: 20px;
     background: #428bca;
@@ -35,6 +35,247 @@ a:hover { color: #1c1c1c; text-decoration: underline; }
     box-shadow: 20px 15px 37px rgba(0, 0, 0, 0.06);
     -webkit-transition: all .2s ease-in-out;
 }
-
-
 .projectBox:hover { -webkit-transform: scale(1.1); }
+
+
+.projectBoxFooter {
+    float:left;
+    height: 68px;
+    background: inherit;
+    text-align: right;
+    padding: 0px 11px 0px 32px;
+}
+
+
+/**********/
+/*********/
+ul.nav-wizard {
+    background-color: #f9f9f9;
+    border: 1px solid #d4d4d4;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    *zoom: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+ul.nav-wizard:before {
+    display: block;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 46px;
+    height: 47px;
+    border-top: 1px solid #d4d4d4;
+    border-bottom: 1px solid #d4d4d4;
+    z-index: 11;
+    content: " ";
+}
+
+ul.nav-wizard:after {
+    display: block;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 138px;
+    height: 47px;
+    border-top: 1px solid #d4d4d4;
+    border-bottom: 1px solid #d4d4d4;
+    z-index: 11;
+    content: " ";
+}
+
+ul.nav-wizard li {
+    position: relative;
+    float: left;
+    height: 46px;
+    display: inline-block;
+    text-align: center;
+    padding: 0 20px 0 30px;
+    margin: 0;
+    font-size: 16px;
+    line-height: 46px;
+}
+
+ul.nav-wizard li a {
+    color: #468847;
+    padding: 0;
+}
+
+ul.nav-wizard li a:hover {
+    background-color: transparent;
+}
+
+ul.nav-wizard li:before {
+    position: absolute;
+    display: block;
+    border: 24px solid transparent;
+    border-left: 16px solid #d4d4d4;
+    border-right: 0;
+    top: -1px;
+    z-index: 10;
+    content: '';
+    right: -16px;
+}
+
+ul.nav-wizard li:after {
+    position: absolute;
+    display: block;
+    border: 24px solid transparent;
+    border-left: 16px solid #f9f9f9;
+    border-right: 0;
+    top: -1px;
+    z-index: 10;
+    content: '';
+    right: -15px;
+}
+
+ul.nav-wizard li.active {
+    color: #3a87ad;
+    background: #d9edf7;
+}
+
+ul.nav-wizard li.active:after {
+    border-left: 16px solid #d9edf7;
+}
+
+ul.nav-wizard li.active a,
+ul.nav-wizard li.active a:active,
+ul.nav-wizard li.active a:visited,
+ul.nav-wizard li.active a:focus {
+    color: #3a87ad;
+    background: #d9edf7 !important;;
+}
+
+ul.nav-wizard .active ~ li {
+    color: #999999;
+    background: #ededed;
+}
+
+ul.nav-wizard .active ~ li:after {
+    border-left: 16px solid #ededed;
+}
+
+ul.nav-wizard .active ~ li a,
+ul.nav-wizard .active ~ li a:active,
+ul.nav-wizard .active ~ li a:visited,
+ul.nav-wizard .active ~ li a:focus {
+    color: #999999;
+    background: #ededed;
+}
+
+ul.nav-wizard.nav-wizard-backnav li:hover {
+    color: #468847;
+    background: #f6fbfd;
+}
+
+ul.nav-wizard.nav-wizard-backnav li:hover:after {
+    border-left: 16px solid #f6fbfd;
+}
+
+ul.nav-wizard.nav-wizard-backnav li:hover a,
+ul.nav-wizard.nav-wizard-backnav li:hover a:active,
+ul.nav-wizard.nav-wizard-backnav li:hover a:visited,
+ul.nav-wizard.nav-wizard-backnav li:hover a:focus {
+    color: #468847;
+    background: #f6fbfd;
+}
+
+ul.nav-wizard.nav-wizard-backnav .active ~ li {
+    color: #999999;
+    background: #ededed;
+}
+
+ul.nav-wizard.nav-wizard-backnav .active ~ li:after {
+    border-left: 16px solid #ededed;
+}
+
+ul.nav-wizard.nav-wizard-backnav .active ~ li a,
+ul.nav-wizard.nav-wizard-backnav .active ~ li a:active,
+ul.nav-wizard.nav-wizard-backnav .active ~ li a:visited,
+ul.nav-wizard.nav-wizard-backnav .active ~ li a:focus {
+    color: #999999;
+    background: #ededed;
+}
+
+.nav-wizard span {
+    display: block;
+    float: left;
+    font-size: 10px;
+    text-align: center;
+    width: 15px;
+    margin: 2px 5px 0px 0px;
+    line-height: 15px;
+    color: #ccc;
+    background: #FFF;
+    border: 2px solid #CCC;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+.nav-wizard .active span {
+    color: #163038;
+    -webkit-box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.8);
+    -moz-box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.8);
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.8);
+    text-shadow: none;
+    border: 2px solid #A3C1C9;
+}
+
+.nav-wizard .active:hover span {
+    color: #8F061E;
+}
+
+.step-number {
+    width: 20px !important;
+    height: 20px;
+    top: 10px;
+    position: relative;
+}
+
+.tab-pane {
+    position: relative;
+    left: 50%;
+    width: 500px;
+    margin-left: -250px;
+}
+
+.finishStep {
+    font-family: "HP Simplified Italic", serif;
+    font-size: 25px;
+    color: #999;
+}
+
+.blockOverlay {
+    background-color: #ffffff !important;
+}
+
+.typeahead-long {
+
+    width: 95%;
+}
+
+.previous a{
+
+    position: relative;
+    left: 50%;
+    width: 140px;
+    height: 40px;
+    padding: 13px !important;
+    margin-left: -250px;
+}
+
+
+.next a,.finish a{
+    position: relative;
+    right: 35%;
+    width: 140px;
+    height: 40px;
+    padding: 13px !important;
+}
+
+.disabledTab{
+    pointer-events: none;
+}

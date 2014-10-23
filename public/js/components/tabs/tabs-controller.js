@@ -12,9 +12,12 @@ elysiumApp.controller('TabsController', function ($scope, MessageBus,$location){
 		MessageBus.onMsg('tab.dashboard', $scope, function(data) {
             $location.path('dashboard');
 		});
-        MessageBus.onMsg('tab.wizard', $scope, function(data) {
+        MessageBus.onMsg('tab.wizard', $scope, function(event, data) {
             $location.path('wizard');
         });
+		MessageBus.onMsg('tab.report', $scope, function(event, data) {
+			$location.path('report');
+		});
 	}
 
 
@@ -24,6 +27,9 @@ elysiumApp.controller('TabsController', function ($scope, MessageBus,$location){
         }
         else if(newLoc.indexOf("wizard") !== -1){
             $scope.selectTab("wizard");
+        }
+        else if(newLoc.indexOf("report") !== -1){
+	        $scope.selectTab("reports");
         }
     });
 
