@@ -3,9 +3,9 @@
         <!--<div class="navbar-inner">-->
             <!--<div class="container">-->
                 <ul class="nav nav-wizard nav-pills">
-                    <li><a href="#tab1" data-toggle="tab" ng-click="noop()"><span class="step-number">1</span> DB Connection</a></li>
+                    <li><a href="#tab1" data-toggle="tab" ng-click="noop()"><span class="step-number">1</span> ALM Connection</a></li>
                     <li><a href="#tab2" data-toggle="tab"><span class="step-number">2</span> Fields Mapping</a></li>
-                    <li><a href="#tab3" data-toggle="tab"><span class="step-number">3</span> Start your Prediction</a></li>
+                    <li><a href="#tab3" data-toggle="tab"><span class="step-number">3</span> Releases</a></li>
                 </ul>
             <!--</div>-->
         <!--</div>-->
@@ -21,25 +21,24 @@
                         <input type="text" class="form-control" id="name" ng-model="project.name">
                     </div>
                     </div>
-                    <div class="form-group">
-                    <div style="float: left">
-                        <label style="margin-top:10px;">DB Type:</label>
-                    </div>
-                    <div style="float: right;width:80%">
-                        <select class="input-large form-control" ng-model="project.dbType">
-                            <option selected value="ALM">ALM</option>
-                            <option value="ORACLE">Oracle</option>
-                            <option value="SQL_SERVER">SQL Server</option>
-                        </select>
-                    </div>
-                </div>
-
+                    <!--<div class="form-group">-->
+                    <!--<div style="float: left">-->
+                        <!--<label style="margin-top:10px;">DB Type:</label>-->
+                    <!--</div>-->
+                    <!--<div style="float: right;width:80%">-->
+                        <!--<select class="input-large form-control" ng-model="project.dbType">-->
+                            <!--<option selected value="ALM">ALM</option>-->
+                            <!--<option value="ORACLE">Oracle</option>-->
+                            <!--<option value="SQL_SERVER">SQL Server</option>-->
+                        <!--</select>-->
+                    <!--</div>-->
+                <!--</div>-->
                 <div class="form-group">
                     <div style="float: left;">
-                        <label for="dbHost" style="margin-top:10px;">DB Server URL:</label>
+                        <label for="almHost" style="margin-top:10px;">ALM Server URL:</label>
                     </div>
                     <div style=";float: right;width:80%">
-                        <input type="text" class="form-control" id="dbHost" ng-model="project.dbHost" placeholder="http://localhost:8080" value="http://localhost:8080">
+                        <input type="text" class="form-control" id="almHost" ng-model="project.almHost" placeholder="http://localhost:8080" value="http://localhost:8080">
                     </div>
                 </div>
             </form>

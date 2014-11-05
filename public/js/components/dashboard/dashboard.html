@@ -1,4 +1,4 @@
-<div ng-repeat="project in projects" class = "projectBox" ng-click=>
+<div ng-repeat="project in projects track by $index" class = "projectBox" ng-click=>
     <h2>Project {{project.name}}</h2>
     <p>Creator:{{project.creator}}</p>
     <p>Creation Date: {{project.creationDate | date:'dd.MM.yyyy HH:mm'}}</p>

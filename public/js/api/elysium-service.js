@@ -7,24 +7,41 @@
  */
 elysiumApp.factory("ElysiumService", ['$http', function ($http) {
 
-	function _runPrediction(host, port, cb) {
+	var modelId = 0;
+	var predictionId = 0;
+	function _startPrediction(modelId, targetRelease, cb) {
 		$http.post('api/run', {host: host, port: port, path: context, type: 'jenkins'}).success(function (data, status) {
-			cb(data);
+			cb(predictionId++);
 		}).error(function (data, status) {
 				cb(null);
 			});
-	}
+	};
 
-	function _getLastResults(host, port, cb) {
+	function _getPredictionResults(options, cb) {
 		$http.get('api/results').success(function (data, status) {
 			cb(data);
 		}).error(function (data, status) {
 				cb(null);
 			});
-	}
+	};
+
+	function _configure(options) {
+		return modelId++;
+	};
+
+	function _almLogin(options) {
+
+	};
+
+	function _getFields(options) {
+
+	};
 
 	return {
-		runPrediction: _runPrediction,
-		getLastResults: _getLastResults
+		almLogin: _almLogin,
+		getFields: _getFields,
+		configure: _configure,
+		startPrediction: _startPrediction,
+		getPredictionResults: _getPredictionResults
 	}
 }]);
