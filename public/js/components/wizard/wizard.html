@@ -21,21 +21,9 @@
                         <input type="text" class="form-control" id="name" ng-model="project.name">
                     </div>
                     </div>
-                    <!--<div class="form-group">-->
-                    <!--<div style="float: left">-->
-                        <!--<label style="margin-top:10px;">DB Type:</label>-->
-                    <!--</div>-->
-                    <!--<div style="float: right;width:80%">-->
-                        <!--<select class="input-large form-control" ng-model="project.dbType">-->
-                            <!--<option selected value="ALM">ALM</option>-->
-                            <!--<option value="ORACLE">Oracle</option>-->
-                            <!--<option value="SQL_SERVER">SQL Server</option>-->
-                        <!--</select>-->
-                    <!--</div>-->
-                <!--</div>-->
                 <div class="form-group">
                     <div style="float: left;">
-                        <label for="almHost" style="margin-top:10px;">ALM Server URL:</label>
+                        <label for="almHost" style="margin-top:10px;">ALM Server:</label>
                     </div>
                     <div style=";float: right;width:80%">
                         <input type="text" class="form-control" id="almHost" ng-model="project.almHost" placeholder="http://localhost:8080" value="http://localhost:8080">
@@ -45,55 +33,36 @@
         </div>
         <div class="tab-pane" id="tab2">
             <form class="form-horizontal" role="form">
-                <div class="form-group" style="margin-top:50px">
+                <div ng-repeat="f in project.fieldsMapping" class="form-group" style="margin-top:50px">
                     <div style="float: left;">
-                        <label>Field A:</label>
+                        <label>{{f.logicalFieldName}}:</label>
                     </div>
                     <div style="float: right;width:80%">
-                        <select class="input-large form-control">
-                            <option selected value="A">A</option>
-                            <option value="B">B</option>
-                            <option value="C">C</option>
-                            <option value="D">D</option>
-                            <option value="E">E</option>
-                            <option value="F">F</option>
-                        </select>
-                </div>
-               </div>
-                <div class="form-group" style="margin-top:50px">
-                    <div style="float: left;">
-                        <label>Field B:</label>
-                    </div>
-                    <div style="float: right;width:80%">
-                        <select class="input-large form-control">
-                            <option selected value="A">A</option>
-                            <option value="B">B</option>
-                            <option value="C">C</option>
-                            <option value="D">D</option>
-                            <option value="E">E</option>
-                            <option value="F">F</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="form-group" style="margin-top:50px">
-                    <div style="float: left;">
-                        <label>Field C:</label>
-                    </div>
-                    <div style="float: right;width:80%">
-                        <select class="input-large form-control">
-                            <option selected value="A">A</option>
-                            <option value="B">B</option>
-                            <option value="C">C</option>
-                            <option value="D">D</option>
-                            <option value="E">E</option>
-                            <option value="F">F</option>
-                        </select>
+                        <select ng-model="f.dbFieldName" ng-options="field.name for field in project.fields">
+                            <option style="display:none" value="">Choose Field</option>
+                        </select><br>
                     </div>
                 </div>
             </form>
         </div>
         <div class="tab-pane" id="tab3">
-            3
+            <form class="form-horizontal" role="form"  class="form-group" style="margin-top:50px">
+                <div ng-repeat="release in project.releases">
+                    <p>Release {{$index}}</p>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="glyphicon glyphicon-calendar"></i>
+                        </span>
+                        <input ui-date ng-model="release.from" placeholder="from">
+                    </div>
+
+                    <input ui-date ng-model="release.to" placeholder="to">
+                    <input ui-date ng-model="release.freeze" placeholder="freeze">
+                </div>
+            <form>
+            <button type="button" class="btn btn-default btn-md" ng-click='addRelease();'>
+                <span class="glyphicon glyphicon-add"></span> Add Release Range
+            </button>
         </div>
         <ul class="pager wizard">
             <li class="previous"><a href="javascript:;">Previous</a></li>
@@ -102,4 +71,3 @@
         </ul>
     </div>
 </div>
-

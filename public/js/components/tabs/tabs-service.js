@@ -8,6 +8,7 @@
 elysiumApp.factory("TabsService",['$rootScope', 'MessageBus', function($rootScope, MessageBus){
 
 	function _switchToDashboard(){
+		console.log('switchToDashboard');
 		MessageBus.emitMsg('tab.dashboard');
 	}
 

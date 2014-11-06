@@ -9,15 +9,15 @@ elysiumApp.controller('DashboardController', ['$rootScope','$scope','$timeout','
 	$scope.init = function() {
 		$scope.projects =
 			[
-		 {name:'p1', creator:'Jack Sparrow', creationDate:'1/1/2014 8:00', lastRunning:'1/2/2014 10:00'}
-		,{name:'p2', creator:'Jack Sparrow', creationDate:'1/1/2014 8:00', lastRunning:'1/2/2014 10:00'}
+//		 {name:'p1', creator:'Jack Sparrow', creationDate:'1/1/2014 8:00', lastRunning:'1/2/2014 10:00'}
+//		,{name:'p2', creator:'Jack Sparrow', creationDate:'1/1/2014 8:00', lastRunning:'1/2/2014 10:00'}
 		    ];
 
 
 		MessageBus.onMsg('project.create', $scope, function(event, data) {
-			console.dir('DashboardController:'+data);
-			$scope.$apply(function(){$scope.projects.unshift(data);});
-
+			$timeout(function() {
+				$scope.projects.unshift(data);
+			});
 		});
 	}
 

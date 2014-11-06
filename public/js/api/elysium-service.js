@@ -29,12 +29,14 @@ elysiumApp.factory("ElysiumService", ['$http', function ($http) {
 		return modelId++;
 	};
 
-	function _almLogin(options) {
-
+	function _almLogin(options, cb) {
+		console.log('ALM Login '+options.almHost);
+		cb();
 	};
 
-	function _getFields(options) {
-
+	function _getFields(options, cb) {
+		console.log('ALM GET Fields'+options.almHost);
+		cb([{'name':'f1'}, {'name':'f2'}, {'name':'f3'}, {'name':'f4'}, {'name':'f5'}]);
 	};
 
 	return {

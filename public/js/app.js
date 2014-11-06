@@ -6,7 +6,7 @@
  * To change this template use File | Settings | File Templates.
  */
 
-var elysiumApp = angular.module('elysiumApp', ['chieffancypants.loadingBar', 'ngRoute']);
+var elysiumApp = angular.module('elysiumApp', ['chieffancypants.loadingBar', 'ngRoute', 'ui.date']);
 
 // configure our routes
 elysiumApp.config(function($routeProvider, $locationProvider) {

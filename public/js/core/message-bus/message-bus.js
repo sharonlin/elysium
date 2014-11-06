@@ -3,11 +3,11 @@
  * User: linsha
  * Date: 8/24/14
  * Time: 3:19 PM
- * To change this template use File | Settings | File Templates.
  */
 elysiumApp.factory('MessageBus', ['$rootScope', function($rootScope) {
 		var msgBus = {};
 		msgBus.emitMsg = function(msg, data) {
+			console.log('emitMsg '+msg);
 			$rootScope.$emit(msg, data);
 		};
 		msgBus.onMsg = function(msg, scope, func) {

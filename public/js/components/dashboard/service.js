@@ -9,6 +9,8 @@ elysiumApp.factory("DashboardService",['$rootScope', 'MessageBus', function($roo
 
 	//Should handle projec list
 	function _createProject(project){
+		console.log('DashboardService createProject');
+		console.dir(project);
 		project.creationDate  = Date.now();
 		project.lastRunning  = project.creationDate;
 		MessageBus.emitMsg('project.create', project);
