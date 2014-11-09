@@ -73,6 +73,7 @@ elysiumApp.controller('WizardController', ['$scope','$timeout', "$location", "Ta
 		//cfpLoadingBar.start();
 		//$timeout(function(){
 			DashboardService.createProject($scope.project);
+			//Reset scope project
 			$scope.project = _initProject();
 			TabsService.switchToDashboard();
 			//cfpLoadingBar.complete();

@@ -5,7 +5,7 @@
  * Time: 4:01 PM
  * To change this template use File | Settings | File Templates.
  */
-elysiumApp.factory("DashboardService",['$rootScope', 'MessageBus', function($rootScope, MessageBus){
+elysiumApp.factory("DashboardService",['MessageBus', function(MessageBus){
 
 	//Should handle projec list
 	function _createProject(project){

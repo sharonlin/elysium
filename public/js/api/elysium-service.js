@@ -10,23 +10,30 @@ elysiumApp.factory("ElysiumService", ['$http', function ($http) {
 	var modelId = 0;
 	var predictionId = 0;
 	function _startPrediction(modelId, targetRelease, cb) {
-		$http.post('api/run', {host: host, port: port, path: context, type: 'jenkins'}).success(function (data, status) {
-			cb(predictionId++);
+		console.log('Start prediction '+modelId);
+		$http.post('api/run',{modelid:modelId, targetrelease:targetRelease} ).success(function (data, status) {
+			cb(null, predictionId++);
 		}).error(function (data, status) {
-				cb(null);
+			cb('Start prediction Failure');
+		});
+	};
+
+	function _getPredictionResults(predictionId, cb) {
+		console.log('Get Prediction Results for predictionId:'+predictionId);
+		$http.get('api/results/'+predictionId).success(function (data, status) {
+			cb(null, data);
+		}).error(function (data, status) {
+				cb('get prediction results failure');
 			});
 	};
 
-	function _getPredictionResults(options, cb) {
-		$http.get('api/results').success(function (data, status) {
-			cb(data);
+	function _configure(options, cb) {
+		console.log('Start prediction');
+		$http.post('api/configure', options).success(function (data, status) {
+			cb(null, modelId++);
 		}).error(function (data, status) {
-				cb(null);
+				cb('Model Configure Failure');
 			});
-	};
-
-	function _configure(options) {
-		return modelId++;
 	};
 
 	function _almLogin(options, cb) {

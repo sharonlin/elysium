@@ -49,12 +49,12 @@
             <form class="form-horizontal" role="form"  class="form-group" style="margin-top:50px">
                 <div ng-repeat="release in project.releases">
                     <p>Release {{$index}}</p>
-                    <div class="input-group">
-                        <span class="input-group-addon">
-                            <i class="glyphicon glyphicon-calendar"></i>
-                        </span>
+                    <!--<div class="input-group">-->
+                        <!--<span class="input-group-addon">-->
+                            <!--<i class="glyphicon glyphicon-calendar"></i>-->
+                        <!--</span>-->
                         <input ui-date ng-model="release.from" placeholder="from">
-                    </div>
+                    <!--</div>-->
 
                     <input ui-date ng-model="release.to" placeholder="to">
                     <input ui-date ng-model="release.freeze" placeholder="freeze">
