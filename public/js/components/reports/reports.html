@@ -1,5 +1,9 @@
-<div class="jumbotron text-center">
+<div>
     <h1>Reports Page</h1>
-
-    <p>{{ message }}</p>
+        <div class="row">
+        <div ng-repeat="result in project.results">
+            <span>{{result.moduleName}}</span>
+            <span><svg width="100" height="25"><rect width="{{result.prediction}}" height="25" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)"/></svg></span>
+        </div>
+        </div>
 </div>

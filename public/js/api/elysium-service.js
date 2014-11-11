@@ -38,12 +38,23 @@ elysiumApp.factory("ElysiumService", ['$http', function ($http) {
 
 	function _almLogin(options, cb) {
 		console.log('ALM Login '+options.almHost);
-		cb();
+		//{withCredentials: true}
+		$http.get('api/almLogin?almHost='+options.almHost)
+			.success(function(data, status){
+			cb();
+		}).error(function (data, status) {
+			cb('ALM Login Failure');
+		});
+
 	};
 
 	function _getFields(options, cb) {
-		console.log('ALM GET Fields'+options.almHost);
-		cb([{'name':'f1'}, {'name':'f2'}, {'name':'f3'}, {'name':'f4'}, {'name':'f5'}]);
+		$http.get('api/getDBFields?almHost='+options.almHost)
+			.success(function(data, status){
+				cb([{'name':'f1'}, {'name':'f2'}, {'name':'f3'}, {'name':'f4'}, {'name':'f5'}]);
+			}).error(function (data, status) {
+				cb();
+			});
 	};
 
 	return {

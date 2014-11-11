@@ -5,21 +5,35 @@
  * Time: 4:01 PM
  * To change this template use File | Settings | File Templates.
  */
-elysiumApp.factory("DashboardService",['MessageBus', function(MessageBus){
+elysiumApp.factory("DashboardService",['MessageBus','ElysiumService', function(MessageBus, ElysiumService){
 
 	//Should handle projec list
+	var _projects = [];
+
+	function _getAllProjects(){
+		return _projects;
+	}
+
 	function _createProject(project){
 		console.log('DashboardService createProject');
 		console.dir(project);
 		project.creationDate  = Date.now();
 		project.lastRunning  = project.creationDate;
-		MessageBus.emitMsg('project.create', project);
+		ElysiumService.configure(project, function (error, modelId) {
+				if (!error) {
+					project.modelId = modelId;
+					_projects.unshift(project);
+					MessageBus.emitMsg('project.created', project);
+				}
+			});
 	}
+
 	function _deleteProject(id){
 		MessageBus.emitMsg('project.delete', id);
 	}
 
 	return {
+		getAllProjects:_getAllProjects,
 		createProject: _createProject,
 		deleteProject: _deleteProject
 	};

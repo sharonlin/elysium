@@ -24,7 +24,7 @@ elysiumApp.controller('WizardController', ['$scope','$timeout', "$location", "Ta
 		ElysiumService.almLogin($scope.project, function(error){
 			if(!error){
 					ElysiumService.getFields($scope.project, function(fields){
-						$scope.$apply(function(){
+						$timeout(function(){
 							$scope.project.fields = fields;
 						});
 				});
@@ -66,7 +66,7 @@ elysiumApp.controller('WizardController', ['$scope','$timeout', "$location", "Ta
 		});
 	}
 	function _initProject (){
-		return {creator:'Jfk',fieldsMapping:[{logicalFieldName:'A'}, {logicalFieldName:'B'}, {logicalFieldName:'C'}], releases:[{from:null, to:null, freeze:null}]};
+		return {creator:'Jfk',almHost:'http://myd-vm05784.hpswlabs.adapps.hp.com:8080',fieldsMapping:[{logicalFieldName:'A'}, {logicalFieldName:'B'}, {logicalFieldName:'C'}], releases:[{from:null, to:null, freeze:null}]};
 	}
 
 	$scope.onWizardFinish = function(){
