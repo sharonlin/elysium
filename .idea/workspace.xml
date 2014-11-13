@@ -4,12 +4,12 @@
     <list default="true" id="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" name="Default" comment="" />
     <ignored path="elysium.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/index.html" changelist="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" time="1415277189387" ignored="false" />
+    <file path="/index.html" changelist="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" time="1415878593503" ignored="false" />
     <file path="/app.js" changelist="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" time="1415536029340" ignored="false" />
     <file path="/dashboard.html" changelist="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" time="1415537658402" ignored="false" />
     <file path="/wizard.html" changelist="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" time="1415278750602" ignored="false" />
     <file path="/resports.html" changelist="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" time="1413807401483" ignored="false" />
-    <file path="/controller.js" changelist="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" time="1415712705845" ignored="false" />
+    <file path="/controller.js" changelist="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" time="1415872234885" ignored="false" />
     <file path="/a.dummy" changelist="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" time="1415712509176" ignored="false" />
     <file path="/elysium-service.js" changelist="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" time="1415784580691" ignored="false" />
     <file path="/main-controller.js" changelist="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" time="1413881589323" ignored="false" />
@@ -31,7 +31,8 @@
     <file path="$PROJECT_DIR$/../hub-application/webapp/src/main/webapp/resources/js/components/live-pipelines/live-pipelines-controller.js" changelist="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" time="1414938548900" ignored="false" />
     <file path="$PROJECT_DIR$/../hub-application/webapp/src/main/webapp/resources/js/components/live-pipelines/live-pipelines-template.html" changelist="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" time="1415013933271" ignored="false" />
     <file path="/message-bus.js" changelist="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" time="1415275971941" ignored="false" />
-    <file path="/reports.html" changelist="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" time="1415542706445" ignored="false" />
+    <file path="/reports.html" changelist="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" time="1415880218152" ignored="false" />
+    <file path="/count-up.js" changelist="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" time="1415879184276" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,20 +96,17 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="66" column="161" selection-start="3709" selection-end="3709" vertical-scroll-proportion="-8.653846">
+            <state line="31" column="42" selection-start="1544" selection-end="1544" vertical-scroll-proportion="-4.576923">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="controller.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/js/components/dashboard/controller.js">
+      <file leaf-file-name="elysium.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/css/elysium.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="11" selection-start="739" selection-end="906" vertical-scroll-proportion="0.0">
-              <folding>
-                <marker date="1415540347586" expanded="true" signature="200:1912" placeholder="[...]" />
-                <marker date="1415540347586" expanded="true" signature="433:1911" placeholder="{...}" />
-              </folding>
+            <state line="3" column="2" selection-start="55" selection-end="55" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -151,39 +149,43 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main-controller.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/js/components/main-controller.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="38" selection-start="260" selection-end="260" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="controller.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/js/components/reports/controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="105" selection-start="260" selection-end="260" vertical-scroll-proportion="0.0">
+            <state line="18" column="42" selection-start="601" selection-end="601" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="wizard.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="wizard.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/js/components/wizard/wizard.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="78" selection-start="1540" selection-end="1540" vertical-scroll-proportion="0.5057208">
+            <state line="33" column="40" selection-start="1808" selection-end="1808" vertical-scroll-proportion="-11.769231">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="reports.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="reports.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/js/components/reports/reports.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="6" selection-start="362" selection-end="362" vertical-scroll-proportion="-5.230769">
+            <state line="25" column="95" selection-start="1366" selection-end="1366" vertical-scroll-proportion="0.5331808">
               <folding>
-                <element signature="n#style#0;n#rect#0;n#svg#0;n#span#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="count-up.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/js/directives/count-up.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="28" column="39" selection-start="790" selection-end="790" vertical-scroll-proportion="-13.851851">
+              <folding>
+                <element signature="e#0#154#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -199,22 +201,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/public/libs/loading-bar/loading-bar.css" />
-        <option value="$PROJECT_DIR$/public/css/elysium.css" />
         <option value="$PROJECT_DIR$/public/js/app.js" />
         <option value="$PROJECT_DIR$/public/js/components/tabs/tabs-service.js" />
         <option value="$PROJECT_DIR$/public/js/core/message-bus/message-bus.js" />
-        <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/public/js/components/dashboard/dashboard.html" />
         <option value="$PROJECT_DIR$/public/js/components/dashboard/service.js" />
         <option value="$PROJECT_DIR$/public/js/components/dashboard/controller.js" />
-        <option value="$PROJECT_DIR$/public/js/components/reports/controller.js" />
-        <option value="$PROJECT_DIR$/public/js/components/reports/reports.html" />
         <option value="$PROJECT_DIR$/public/js/api/elysium-service.js" />
         <option value="$PROJECT_DIR$/public/js/components/wizard/wizard.html" />
         <option value="$PROJECT_DIR$/public/js/components/wizard/controller.js" />
         <option value="$PROJECT_DIR$/api/elysium-service.js" />
+        <option value="$PROJECT_DIR$/public/css/elysium.css" />
+        <option value="$PROJECT_DIR$/public/index.html" />
+        <option value="$PROJECT_DIR$/public/js/components/reports/controller.js" />
+        <option value="$PROJECT_DIR$/public/js/directives/count-up.js" />
+        <option value="$PROJECT_DIR$/public/js/components/reports/reports.html" />
       </list>
     </option>
   </component>
@@ -319,6 +321,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="directives" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="elysium" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="elysium" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="components" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -345,7 +369,25 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="wizard" />
+              <option name="myItemId" value="reports" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="elysium" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="elysium" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -564,7 +606,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21419829" sideWeight="0.6315789" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24479803" sideWeight="0.6315789" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.36842105" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -660,20 +702,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/js/core/message-bus/message-bus.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="0" selection-start="85" selection-end="85" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="27" selection-start="677" selection-end="677" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/components/tabs/tabs-controller.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -706,8 +734,8 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="20" column="11" selection-start="739" selection-end="906" vertical-scroll-proportion="0.0">
           <folding>
-            <marker date="1415540347586" expanded="true" signature="200:1912" placeholder="[...]" />
-            <marker date="1415540347586" expanded="true" signature="433:1911" placeholder="{...}" />
+            <marker date="1415540347586" expanded="true" signature="-1:-1" placeholder="[...]" />
+            <marker date="1415540347586" expanded="true" signature="-1:-1" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -715,22 +743,6 @@
     <entry file="file://$PROJECT_DIR$/public/js/components/main-controller.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="38" selection-start="260" selection-end="260" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/components/reports/reports.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="6" selection-start="362" selection-end="362" vertical-scroll-proportion="-5.230769">
-          <folding>
-            <element signature="n#style#0;n#rect#0;n#svg#0;n#span#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/components/reports/controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="105" selection-start="260" selection-end="260" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -749,6 +761,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="0" selection-start="297" selection-end="297" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/components/wizard/wizard.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="40" selection-start="1808" selection-end="1808" vertical-scroll-proportion="-11.769231">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/api/elysium-service.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="116" column="30" selection-start="3731" selection-end="3731" vertical-scroll-proportion="0.0">
@@ -758,24 +784,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
+    <entry file="file://$PROJECT_DIR$/public/css/elysium.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="297" selection-end="297" vertical-scroll-proportion="0.0">
+        <state line="3" column="2" selection-start="55" selection-end="55" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="66" column="161" selection-start="3709" selection-end="3709" vertical-scroll-proportion="-8.653846">
+        <state line="31" column="42" selection-start="1544" selection-end="1544" vertical-scroll-proportion="-4.576923">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/components/wizard/wizard.html">
+    <entry file="file://$PROJECT_DIR$/public/js/directives/count-up.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="78" selection-start="1540" selection-end="1540" vertical-scroll-proportion="0.5057208">
+        <state line="28" column="39" selection-start="790" selection-end="790" vertical-scroll-proportion="-13.851851">
+          <folding>
+            <element signature="e#0#154#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/components/reports/controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="42" selection-start="601" selection-end="601" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/components/reports/reports.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="95" selection-start="1366" selection-end="1366" vertical-scroll-proportion="0.5331808">
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
