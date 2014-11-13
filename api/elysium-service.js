@@ -56,8 +56,6 @@ function _getDBFields(req, res){
 		port: 8080,
 		path: req.query.almHost+'/qcbin/rest/domains/DEFAULT/projects/project1/customization/lists',//http://myd-vm05784.hpswlabs.adapps.hp.com:8080/qcbin/rest/domains/DEFAULT/projects/project1/customization/lists',
 		headers: {
-//			'Host':          hpaHost,
-//			'X-CSRF-HPMEAP': 'HPA-Admin',
 //			'Content-Length':0,
 			'Content-Type':  'application/json',
 //			'Cookie':        'LWSSO_COOKIE_KEY='+req.headers['Cookie']
