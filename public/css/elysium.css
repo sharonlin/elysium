@@ -1,5 +1,5 @@
 body {
-  padding: 20px;
+  padding: 10px;
   /*background: lightgrey;*/
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
@@ -9,7 +9,7 @@ body {
 /*}*/
 
 
-h1 { color: #ffffff; font-family: 'Raleway',sans-serif; font-size: 62px; font-weight: 800; line-height: 72px; margin: 0 0 12px; text-align: center; text-transform: uppercase; }
+/*h1 { color: #ffffff; font-family: 'Raleway',sans-serif; font-size: 62px; font-weight: 800; line-height: 72px; margin: 0 0 12px; text-align: center; text-transform: uppercase; }*/
 
 h2 { color: #ffffff; font-family: 'Raleway',sans-serif; font-size: 30px; font-weight: 800; line-height: 36px; margin: 0 0 12px; text-align: center; }
 
@@ -18,6 +18,14 @@ p { color: #f8f8f8; font-family: 'Raleway',sans-serif; font-size: 18px; font-wei
 a { color: #c8c8c8; text-decoration: underline; }
 
 a:hover { color: #1c1c1c; text-decoration: underline; }
+.list-group-item {
+    border:none;
+}
+
+.list-group-item:first-child {
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
 
 .projectBox {
     display: inline-block;

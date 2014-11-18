@@ -9,6 +9,15 @@ elysiumApp.factory("ElysiumService", ['$http', function ($http) {
 
 	var modelId = 0;
 	var predictionId = 0;
+	function _syncPrediction(cb) {
+		console.log('Start prediction');
+		$http.get('api/runSync').success(function (data, status) {
+			cb(null, data);
+		}).error(function (data, status) {
+				cb('Start prediction Failure');
+			});
+	};
+
 	function _startPrediction(modelId, targetRelease, cb) {
 		console.log('Start prediction '+modelId);
 		$http.post('api/run',{modelid:modelId, targetrelease:targetRelease} ).success(function (data, status) {
@@ -62,6 +71,7 @@ elysiumApp.factory("ElysiumService", ['$http', function ($http) {
 		getFields: _getFields,
 		configure: _configure,
 		startPrediction: _startPrediction,
-		getPredictionResults: _getPredictionResults
+		getPredictionResults: _getPredictionResults,
+		syncPrediction : _syncPrediction
 	}
 }]);

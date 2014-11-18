@@ -9,13 +9,13 @@
     <file path="/dashboard.html" changelist="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" time="1415537658402" ignored="false" />
     <file path="/wizard.html" changelist="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" time="1415278750602" ignored="false" />
     <file path="/resports.html" changelist="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" time="1413807401483" ignored="false" />
-    <file path="/controller.js" changelist="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" time="1416216721047" ignored="false" />
-    <file path="/a.dummy" changelist="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" time="1415712509176" ignored="false" />
-    <file path="/elysium-service.js" changelist="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" time="1415784580691" ignored="false" />
+    <file path="/controller.js" changelist="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" time="1416319331164" ignored="false" />
+    <file path="/a.dummy" changelist="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" time="1416319547766" ignored="false" />
+    <file path="/elysium-service.js" changelist="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" time="1416317605090" ignored="false" />
     <file path="/main-controller.js" changelist="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" time="1413881589323" ignored="false" />
     <file path="/tabs-service.js" changelist="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" time="1415275913377" ignored="false" />
     <file path="/service.js" changelist="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" time="1415540170729" ignored="false" />
-    <file path="/elysium.css" changelist="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" time="1414046625337" ignored="false" />
+    <file path="/elysium.css" changelist="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" time="1416310968531" ignored="false" />
     <file path="/tabs-controller.js" changelist="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" time="1414046976637" ignored="false" />
     <file path="/Dummy.txt" changelist="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" time="1415013896084" ignored="false" />
     <file path="$PROJECT_DIR$/../hub-application/webapp/src/main/webapp/resources/js/components/pipeline-editor/pipeline-editor-directive.html" changelist="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" time="1414928622714" ignored="false" />
@@ -31,9 +31,9 @@
     <file path="$PROJECT_DIR$/../hub-application/webapp/src/main/webapp/resources/js/components/live-pipelines/live-pipelines-controller.js" changelist="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" time="1414938548900" ignored="false" />
     <file path="$PROJECT_DIR$/../hub-application/webapp/src/main/webapp/resources/js/components/live-pipelines/live-pipelines-template.html" changelist="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" time="1415013933271" ignored="false" />
     <file path="/message-bus.js" changelist="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" time="1415275971941" ignored="false" />
-    <file path="/reports.html" changelist="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" time="1416144379044" ignored="false" />
+    <file path="/reports.html" changelist="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" time="1416314947881" ignored="false" />
     <file path="/count-up.js" changelist="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" time="1415879184276" ignored="false" />
-    <file path="/d3-gfx.js" changelist="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" time="1416225791120" ignored="false" />
+    <file path="/d3-gfx.js" changelist="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" time="1416309078028" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +97,16 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="63" selection-start="2079" selection-end="2079" vertical-scroll-proportion="-7.6538463">
+            <state line="64" column="62" selection-start="3134" selection-end="3134" vertical-scroll-proportion="-13.730769">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="controller.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/js/components/dashboard/controller.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="33" column="43" selection-start="1250" selection-end="1250" vertical-scroll-proportion="-6.296296">
               <folding />
             </state>
           </provider>
@@ -106,16 +115,7 @@
       <file leaf-file-name="service.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/js/components/dashboard/service.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="34" selection-start="693" selection-end="693" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="elysium.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/css/elysium.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="2" selection-start="55" selection-end="55" vertical-scroll-proportion="0.0">
+            <state line="10" column="26" selection-start="315" selection-end="315" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -124,7 +124,16 @@
       <file leaf-file-name="dashboard.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/js/components/dashboard/dashboard.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="39" selection-start="353" selection-end="353" vertical-scroll-proportion="-3.2692308">
+            <state line="7" column="81" selection-start="460" selection-end="470" vertical-scroll-proportion="-2.2452831">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="8" column="0" selection-start="297" selection-end="297" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -133,29 +142,9 @@
       <file leaf-file-name="elysium-service.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/api/elysium-service.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="116" column="30" selection-start="3731" selection-end="3731" vertical-scroll-proportion="0.0">
+            <state line="118" column="51" selection-start="3822" selection-end="3822" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#0#153#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="controller.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/js/components/reports/controller.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="80" selection-start="581" selection-end="581" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="d3-gfx.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/public/js/components/reports/d3-gfx.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="50" column="26" selection-start="1879" selection-end="1879" vertical-scroll-proportion="-0.3777336">
-              <folding>
-                <element signature="n#!!doc;n#D3GFX#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -164,7 +153,16 @@
       <file leaf-file-name="elysium-service.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/js/api/elysium-service.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="15" column="42" selection-start="446" selection-end="446" vertical-scroll-proportion="-6.703704">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="controller.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/js/components/wizard/controller.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="33" column="24" selection-start="1146" selection-end="1146" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -173,24 +171,26 @@
       <file leaf-file-name="reports.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/js/components/reports/reports.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="93" selection-start="807" selection-end="807" vertical-scroll-proportion="-5.230769">
+            <state line="21" column="43" selection-start="1833" selection-end="1833" vertical-scroll-proportion="-8.038462">
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#rect#0;n#svg#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#a#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="count-up.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/js/directives/count-up.js">
+      <file leaf-file-name="wizard.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/js/components/wizard/wizard.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="39" selection-start="790" selection-end="790" vertical-scroll-proportion="-13.851851">
-              <folding>
-                <element signature="e#0#154#0" expanded="false" />
-              </folding>
+            <state line="14" column="54" selection-start="784" selection-end="784" vertical-scroll-proportion="0.5496536">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -208,19 +208,19 @@
         <option value="$PROJECT_DIR$/public/js/components/tabs/tabs-service.js" />
         <option value="$PROJECT_DIR$/public/js/core/message-bus/message-bus.js" />
         <option value="$PROJECT_DIR$/app.js" />
-        <option value="$PROJECT_DIR$/public/js/components/dashboard/dashboard.html" />
-        <option value="$PROJECT_DIR$/public/js/components/dashboard/service.js" />
-        <option value="$PROJECT_DIR$/public/js/components/dashboard/controller.js" />
-        <option value="$PROJECT_DIR$/public/js/api/elysium-service.js" />
+        <option value="$PROJECT_DIR$/public/js/components/reports/d3-gfx.js" />
+        <option value="$PROJECT_DIR$/public/index.html" />
+        <option value="$PROJECT_DIR$/public/js/directives/count-up.js" />
+        <option value="$PROJECT_DIR$/public/js/components/reports/controller.js" />
+        <option value="$PROJECT_DIR$/public/css/elysium.css" />
+        <option value="$PROJECT_DIR$/public/js/components/reports/reports.html" />
         <option value="$PROJECT_DIR$/public/js/components/wizard/wizard.html" />
         <option value="$PROJECT_DIR$/public/js/components/wizard/controller.js" />
+        <option value="$PROJECT_DIR$/public/js/components/dashboard/service.js" />
+        <option value="$PROJECT_DIR$/public/js/components/dashboard/dashboard.html" />
+        <option value="$PROJECT_DIR$/public/js/components/dashboard/controller.js" />
+        <option value="$PROJECT_DIR$/public/js/api/elysium-service.js" />
         <option value="$PROJECT_DIR$/api/elysium-service.js" />
-        <option value="$PROJECT_DIR$/public/css/elysium.css" />
-        <option value="$PROJECT_DIR$/public/js/directives/count-up.js" />
-        <option value="$PROJECT_DIR$/public/index.html" />
-        <option value="$PROJECT_DIR$/public/js/components/reports/reports.html" />
-        <option value="$PROJECT_DIR$/public/js/components/reports/controller.js" />
-        <option value="$PROJECT_DIR$/public/js/components/reports/d3-gfx.js" />
       </list>
     </option>
   </component>
@@ -351,7 +351,33 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="reports" />
+              <option name="myItemId" value="wizard" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="elysium" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="elysium" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dashboard" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -577,7 +603,7 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27694234" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2756892" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39974937" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -592,8 +618,8 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17809057" sideWeight="0.66541356" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33458647" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1891065" sideWeight="0.6265664" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3734336" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -662,22 +688,22 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/public/js/api/elysium-service.js</url>
-          <line>43</line>
+          <line>52</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/public/js/api/elysium-service.js</url>
-          <line>39</line>
+          <line>48</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/public/js/components/wizard/controller.js</url>
-          <line>56</line>
+          <line>64</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/public/js/components/wizard/controller.js</url>
-          <line>53</line>
+          <line>61</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
@@ -688,23 +714,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/js/components/tabs/tabs-service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="38" selection-start="499" selection-end="510" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/components/dashboard/controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="11" selection-start="739" selection-end="906" vertical-scroll-proportion="0.0">
-          <folding>
-            <marker date="1415540347586" expanded="true" signature="-1:-1" placeholder="[...]" />
-            <marker date="1415540347586" expanded="true" signature="-1:-1" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/components/main-controller.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="38" selection-start="260" selection-end="260" vertical-scroll-proportion="0.0">
@@ -712,10 +721,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/components/wizard/controller.js">
+    <entry file="file://$PROJECT_DIR$/public/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="78" column="39" selection-start="2486" selection-end="2486" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/directives/count-up.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="39" selection-start="789" selection-end="789" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#0#154#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/components/reports/d3-gfx.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="220" column="0" selection-start="6477" selection-end="6477" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="n#!!doc;n#D3GFX#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/elysium.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="0" selection-start="335" selection-end="335" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/components/reports/controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="59" column="5" selection-start="2221" selection-end="2221" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/components/reports/reports.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="43" selection-start="1833" selection-end="1833" vertical-scroll-proportion="-8.038462">
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#a#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -726,91 +783,61 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/components/wizard/wizard.html">
+    <entry file="file://$PROJECT_DIR$/public/js/components/wizard/controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="40" selection-start="1808" selection-end="1808" vertical-scroll-proportion="-11.769231">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/elysium-service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="116" column="30" selection-start="3731" selection-end="3731" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#0#153#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/elysium.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="2" selection-start="55" selection-end="55" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/directives/count-up.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="39" selection-start="790" selection-end="790" vertical-scroll-proportion="-13.851851">
-          <folding>
-            <element signature="e#0#154#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/components/dashboard/service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="34" selection-start="693" selection-end="693" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/components/dashboard/dashboard.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="39" selection-start="353" selection-end="353" vertical-scroll-proportion="-3.2692308">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/api/elysium-service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="33" column="24" selection-start="1146" selection-end="1146" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="63" selection-start="2079" selection-end="2079" vertical-scroll-proportion="-7.6538463">
+        <state line="64" column="62" selection-start="3134" selection-end="3134" vertical-scroll-proportion="-13.730769">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/components/reports/reports.html">
+    <entry file="file://$PROJECT_DIR$/public/js/components/dashboard/service.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="93" selection-start="807" selection-end="807" vertical-scroll-proportion="-5.230769">
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#rect#0;n#svg#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/components/reports/controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="80" selection-start="581" selection-end="581" vertical-scroll-proportion="0.0">
+        <state line="10" column="26" selection-start="315" selection-end="315" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/components/reports/d3-gfx.js">
+    <entry file="file://$PROJECT_DIR$/public/js/components/dashboard/dashboard.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="26" selection-start="1879" selection-end="1879" vertical-scroll-proportion="-0.3777336">
+        <state line="7" column="81" selection-start="460" selection-end="470" vertical-scroll-proportion="-2.2452831">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/api/elysium-service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="42" selection-start="446" selection-end="446" vertical-scroll-proportion="-6.703704">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/components/dashboard/controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="43" selection-start="1250" selection-end="1250" vertical-scroll-proportion="-6.296296">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/elysium-service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="118" column="51" selection-start="3822" selection-end="3822" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="n#!!doc;n#D3GFX#0" expanded="false" />
+            <element signature="e#0#153#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/components/wizard/wizard.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="54" selection-start="784" selection-end="784" vertical-scroll-proportion="0.5496536">
+          <folding />
         </state>
       </provider>
     </entry>

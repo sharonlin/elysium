@@ -17,7 +17,7 @@ elysiumApp.directive('countUp', ['$compile',function($compile,$timeout) {
 		controller: ['$scope', '$element', '$attrs', '$timeout', function ($scope, $element, $attrs, $timeout) {
 			$scope.millis = 0;
 			if ($element.html().trim().length === 0) {
-				$element.append($compile('<span>{{millis}}%</span>')($scope));
+				$element.append($compile('<span>{{millis}}</span>')($scope));
 			} else {
 				$element.append($compile($element.contents())($scope));
 			}

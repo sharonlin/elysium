@@ -23,31 +23,45 @@ elysiumApp.controller('DashboardController', ['$scope', '$interval', '$timeout',
 
 	$scope.openReport = function (project) {
 		TabsService.switchToReport(project);
-	};
+	}
 
 	$scope.runPredict = function (project) {
-		ElysiumService.startPrediction(project.modelId, '1/1/2014', function (error, predictionId) {
+		ElysiumService.syncPrediction(function(error, predictionResults) {
 			cfpLoadingBar.start();
 			if (!error) {
-				//Poll results 5 times per 5 seconds
-				var pollHandler = $interval(function () {
-					ElysiumService.getPredictionResults(predictionId, function (error, predictionResults) {
-						if (!error) {
-							if (predictionResults) {
-								$interval.cancel(pollHandler);
-								project.results = predictionResults;
-								TabsService.switchToReport(project);
-								cfpLoadingBar.complete();
-							}
-						}else {
-							//Stop since we got error
-							$interval.cancel(pollHandler);
-						}
-					});
-				}, 5000, 5);
+				if (predictionResults) {
+					TabsService.switchToReport(project);
+					console.log('fsfsfsf');
+					console.dir(predictionResults);
+					project.results = predictionResults;
+					cfpLoadingBar.complete();
+				}
 			}
 		});
-	};
+	}
+//	$scope.runPredict = function (project) {
+//		ElysiumService.startPrediction(project.modelId, '1/1/2014', function (error, predictionId) {
+//			cfpLoadingBar.start();
+//			if (!error) {
+//				//Poll results 5 times per 5 seconds
+//				var pollHandler = $interval(function () {
+//					ElysiumService.getPredictionResults(predictionId, function (error, predictionResults) {
+//						if (!error) {
+//							if (predictionResults) {
+//								$interval.cancel(pollHandler);
+//								project.results = predictionResults;
+//								TabsService.switchToReport(project);
+//								cfpLoadingBar.complete();
+//							}
+//						}else {
+//							//Stop since we got error
+//							$interval.cancel(pollHandler);
+//						}
+//					});
+//				}, 5000, 5);
+//			}
+//		});
+//	}
 
 	$scope.runTrain = function (project) {
 		cfpLoadingBar.start();

@@ -7,6 +7,10 @@
  */
 function D3GFX(options) {
 	var svg;
+	var featureExtraInfo = {};
+	var xRange, yRange;
+	var isScoreOver = false;
+	var _featureClickedListener;
 	_addDropShadowFilter(options);
 	function _addDropShadowFilter(options) {
 		svg = d3.select(options.elSvg);
@@ -89,14 +93,43 @@ function D3GFX(options) {
 			.attr("font-family", "sans-serif")
 			.attr("font-size", "20px")
 			.attr("fill", "black");
-
 	}
+
+	function _onFeatureMouseOver(d){
+		console.log('_onFeatureMouseOver '+ d.moduleName);
+		//d3.select(this).attr()
+		featureExtraInfo.group.attr("transform", "translate(" + xRange(d.x) + "," + yRange(d.y) + ")");
+		featureExtraInfo.featureName = d.moduleName;
+		featureExtraInfo.group.style("opacity", 1);
+		featureExtraInfo.currentScore.text(d.y);
+		featureExtraInfo.expectedScore
+			//.attr("transform", "translate(" + 0 + "," + yRange(d.y+30) + ")")
+			.text(d.y + 30);
+	}
+
+	function _onFeatureMouseOut(d) {
+//		console.log('_onFeatureMouseOut '+ d.moduleName + ' ,isScoreOver '+isScoreOver );
+		setTimeout(function(){
+			if(isScoreOver === false) {
+				featureExtraInfo.group.style("opacity", 0);
+			}
+		},500);
+	}
+
+	function _onScoreMouseOver() {
+		isScoreOver = true;
+	}
+	function _onScoreMouseOut() {
+		isScoreOver = false;
+	}
+
+
 	function _renderGraph(data){
 		var colors = d3.scale.category10().range();
 
 		var vis = d3.select("#riskChart");
 		var visGroup = vis.append('svg:g').attr("transform", "translate(80,40)");
-		var xRange = d3.scale.linear().range([80, 440]).domain(
+		xRange = d3.scale.linear().range([0, 400]).domain(   //80/440
 			[0,100]
 //			[d3.min(data, function (d) {
 //			return (d.x);
@@ -105,7 +138,7 @@ function D3GFX(options) {
 //				return d.x;
 //			})]
 		);
-		var yRange = d3.scale.linear().range([440, 80]).domain(
+		yRange = d3.scale.linear().range([400, 0]).domain(   //440,80
 			[
 				0,100
 			]
@@ -123,28 +156,79 @@ function D3GFX(options) {
 //		vis.append("svg:g").call(xAxis).attr("transform", "translate(0,400)");
 //		vis.append("svg:g").call(yAxis).attr("transform", "translate(40,0)");
 
-		_addXAxis(visGroup);
-		_addYAxis(visGroup);
-
-		var circles = vis.selectAll("circle").data(data);
+		var circles = visGroup.selectAll("circle").data(data);
 		circles.enter()
 			.insert("circle")
 			.attr("cx", function (d) { return xRange (d.x); })
 			.attr("cy", function (d) { return yRange (d.y); })
 			.attr("r", "0")
 			.attr("filter", "url(#drop-shadow)")
-			.style("fill", function(d,i){return colors[i];});
+			.style("fill", function(d,i){return colors[i];})
+			.on('mouseover',_onFeatureMouseOver)
+			.on('mouseout', _onFeatureMouseOut);
 
 		circles.transition()
-			.duration(2000)
-			.attr("r", function(d){return d.complexity;});
+			.duration(1000)
+			.delay(function(d,i){return i * 100})
+			.attr("r", function(d){return d.complexity;})
+			.ease("elastic");
 
 
+		var labels = visGroup.selectAll("text").data(data);
+		labels.enter()
+			.insert("text")
+			.attr("x", function (d) { return xRange (d.x); })
+			.attr("y", function (d) { return yRange (d.y + d.complexity/2 - 3); })
+			.text(function(d){return d.moduleName;})
+			.attr("font-family", "sans-serif")
+			.attr("font-size", "18px")
+			.attr("fill", "black")
+			.style('opacity', 0);
+
+		labels.transition()
+			.duration(1000)
+			.delay(function(d,i){return i * 100})
+			.style('opacity', 1)
+			.ease("elastic");
 
 
+		featureExtraInfo.group = visGroup.append("g")
+			.attr("id", "extraInfo")
+			.style("opacity", 0)
+			.on("click", function(d) {
+				_featureClickedListener(featureExtraInfo.featureName);
+			});
+
+		featureExtraInfo.currentScore = featureExtraInfo.group.append("text")
+			.attr("x", 0)
+			.attr("y", 0)
+			.text("45")
+			.attr("text-anchor", "middle")
+			.attr("font-family", "sans-serif")
+			.attr("font-size", "18px")
+			.attr("fill", "red")
+			.on('mouseover',_onScoreMouseOver)
+			.on('mouseout',_onScoreMouseOut);
+
+		featureExtraInfo.expectedScore  = featureExtraInfo.group.append("text")
+			.attr("x", 0)
+			.attr("y", -40)
+			.text("80")
+			.attr("text-anchor", "middle")
+			.attr("font-family", "sans-serif")
+			.attr("font-size", "18px")
+			.attr("fill", "blue");
+
+		_addXAxis(visGroup);
+		_addYAxis(visGroup);
+	}
+
+	function _setFeatureClickedListener(listener) {
+		_featureClickedListener = listener;
 	}
 	return {
-		renderGraph: _renderGraph
+		renderGraph: _renderGraph,
+		setFeatureClickedListener: _setFeatureClickedListener
 	}
 };
 

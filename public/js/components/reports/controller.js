@@ -15,24 +15,63 @@ elysiumApp.controller('ReportsController', ['$scope','$timeout','MessageBus' ,fu
 //			});
 //		});
 		//Mock data
-		$scope.project = {results:[
-		 {moduleName:'A', prediction:50, recommendation:'Add 2 developers', x:50, y:0, complexity:10}
-			,{moduleName:'Rt', prediction:56, recommendation:'Add 2 developers', x:40, y:50, complexity:15}
-			,{moduleName:'OAPFA', prediction:68, recommendation:'Add 2 developers', x:60, y:30, complexity:22}
-			,{moduleName:'KFA kas', prediction:43, recommendation:'Add 2 developers', x:80, y:64, complexity:18}
-			,{moduleName:'D', prediction:42, recommendation:'Add 2 developers', x:100, y:27, complexity:12}
-			,{moduleName:'E', prediction:20, recommendation:'Add 2 developers', x:70, y:28, complexity:11}
-			,{moduleName:'F', prediction:11, recommendation:'Add 2 developers', x:70, y:86, complexity:11}
-			,{moduleName:'R', prediction:45, recommendation:'Add 2 developers', x:70, y:48, complexity:11}
-			,{moduleName:'et', prediction:59, recommendation:'Add 2 developers', x:54, y:65, complexity:14}
-			,{moduleName:'afa', prediction:11, recommendation:'Add 2 developers', x:29, y:86, complexity:16}
+
+		var a = {
+			     "modules" :
+			      [
+				          {
+			              "name": "Installation",
+				              "size": "56",
+				              "score": "0.56",
+				              "currentStatus": "BAD",
+				              "recommendation": "too much developers",
+				            "afterImprovement": "0.76"
+			        },
+				      {
+					      "name": "Installation",
+					      "size": "56",
+					      "score": "0.56",
+					      "currentStatus": "BAD",
+					      "recommendation": "too much developers",
+					      "afterImprovement": "0.76"
+				      }
+			      ]
+		};
+
+
+			$scope.project = {results:[
+		     {moduleName:'A', prediction:50, recommendation:'Add 2 developers', x:0, y:0, complexity:15}
+			,{moduleName:'R', prediction:56, recommendation:'Add 2 developers', x:10, y:50, complexity:15}
+			,{moduleName:'O', prediction:68, recommendation:'Add 2 developers', x:80, y:30, complexity:22}
+			,{moduleName:'K', prediction:43, recommendation:'Add 2 developers', x:80, y:64, complexity:18}
+			,{moduleName:'D', prediction:42, recommendation:'Add 2 developers', x:100, y:27, complexity:17}
+			,{moduleName:'E', prediction:20, recommendation:'Add 2 developers', x:30, y:28, complexity:19}
+			,{moduleName:'F', prediction:11, recommendation:'Add 2 developers', x:70, y:86, complexity:17}
+			,{moduleName:'R', prediction:45, recommendation:'Add 2 developers', x:70, y:48, complexity:22}
+			,{moduleName:'UU', prediction:59, recommendation:'Add 2 developers', x:54, y:65, complexity:25}
+			,{moduleName:'FOO', prediction:11, recommendation:'Add 2 developers', x:100, y:86, complexity:17}
 		]};
+		$scope.selectedItem = $scope.project.results[0];
 		InitChart();
 	}
 
-
+	$scope.selectItem = function(item) {
+		$scope.selectedItem = item;
+	}
 	function InitChart(){
 		d3gfx = new D3GFX({elSvg:'#riskChart'});
+		d3gfx.setFeatureClickedListener(function(featureName){
+			console.log('Feature '+featureName+'Clicked');
+			//Find it in the array and set it as active
+			angular.forEach($scope.project.results, function(feature){
+				if(feature.moduleName === featureName) {
+					$timeout(function(){
+						$scope.selectedItem = feature;
+					},0);
+					return true;
+				}
+			});
+		});
 		d3gfx.renderGraph($scope.project.results);
 	}
 

@@ -14,7 +14,7 @@ function _almLogin(req, res){
 		hostname:'web-proxy.isr.hp.com',
 		port: 8080,
 		path: req.query.almHost+'/qcbin/authentication-point/authenticate',//'http://myd-vm05784.hpswlabs.adapps.hp.com:8080/qcbin/authentication-point/authenticate',//req.query.almHost+'/qcbin/authentication-point/authenticate',
-		auth: 'sharon' + ':' +'letmein'
+		auth: 'sa' + ':' +''
 	};
 
 	http.get(options, function(almRes){
@@ -23,6 +23,7 @@ function _almLogin(req, res){
 			body += data;
 		});
 		almRes.on('end', function() {
+			console.log('Login End');
 			console.dir(almRes.headers);
 			if(almRes.headers['set-cookie']) {
 				currentSessionCookie = almRes.headers['set-cookie'];
@@ -87,9 +88,38 @@ function _configure(req, res){
 }
 var counter = 0;
 function _startPrediction(req, res){
-	console.log('startPrediction '+req.body.predictionId);
-	res.json({data: 'Start prediction Mock Data'});
+//	console.log('startPrediction '+req.body.predictionId);
 
+	console.log('Start Prediction');
+	console.dir(currentSessionCookie);
+	var options = {
+		//host: 'myd-vm05784.hpswlabs.adapps.hp.com',
+		hostname:'web-proxy.isr.hp.com',
+		port: 8080,
+		path: req.query.almHost+'/qcbin/rest/domains/ANNA/projects/proj1/prediction',//http://myd-vm05784.hpswlabs.adapps.hp.com:8080/qcbin/rest/domains/DEFAULT/projects/project1/customization/lists',
+		headers: {
+			'Content-Length':0,
+			'Content-Type':  'application/json',
+			'Cookie':        currentSessionCookie[0]
+		}
+	};
+
+	http.get(options, function(predictionResults){
+//		var body = "";
+//		loginRes.on('data', function(data) {
+//			body += data;
+//		});
+//		loginRes.on('end', function() {
+//			console.dir(loginRes.headers);
+//			if(loginRes.headers['set-cookie']) {
+//				currentSessionCookie =  loginRes.headers['set-cookie'];
+//			}
+//		});
+//		loginRes.on('error', function(e) {
+//			console.log("Got error: " + e.message);
+//		});
+		predictionResults.pipe(res);
+	});
 }
 function _getPredictionResults(req, res){
 	console.log('getPredictionResults '+req.params.predictionId);
@@ -109,7 +139,8 @@ function _init(app, router){
 	router.get('/almLogin', _almLogin);
 	router.get('/getDBFields', _getDBFields);
 	router.post('/configure', _configure);
-	router.post('/run', _startPrediction);
+//	router.post('/run', _startPrediction);
+	router.get('/runSync', _startPrediction);
 	router.get('/results/:predictionId', _getPredictionResults);
 	console.log('Elysium Routes');
 }
