@@ -9,9 +9,9 @@ elysiumApp.factory("ElysiumService", ['$http', function ($http) {
 
 	var modelId = 0;
 	var predictionId = 0;
-	function _syncPrediction(cb) {
+	function _syncPrediction(options, cb) {
 		console.log('Start prediction');
-		$http.get('api/runSync').success(function (data, status) {
+		$http.get('api/runSync?almHost='+options.almHost).success(function (data, status) {
 			cb(null, data);
 		}).error(function (data, status) {
 				cb('Start prediction Failure');
@@ -60,6 +60,7 @@ elysiumApp.factory("ElysiumService", ['$http', function ($http) {
 	function _getFields(options, cb) {
 		$http.get('api/getDBFields?almHost='+options.almHost)
 			.success(function(data, status){
+				console.dir(data);
 				cb([{'name':'f1'}, {'name':'f2'}, {'name':'f3'}, {'name':'f4'}, {'name':'f5'}]);
 			}).error(function (data, status) {
 				cb();

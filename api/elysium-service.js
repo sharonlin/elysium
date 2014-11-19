@@ -55,7 +55,7 @@ function _getDBFields(req, res){
 		//host: 'myd-vm05784.hpswlabs.adapps.hp.com',
 		hostname:'web-proxy.isr.hp.com',
 		port: 8080,
-		path: req.query.almHost+'/qcbin/rest/domains/DEFAULT/projects/project1/customization/lists',//http://myd-vm05784.hpswlabs.adapps.hp.com:8080/qcbin/rest/domains/DEFAULT/projects/project1/customization/lists',
+		path: req.query.almHost+'/qcbin/rest/domains/ANNA/projects/proj1/customization/lists',//http://myd-vm05784.hpswlabs.adapps.hp.com:8080/qcbin/rest/domains/DEFAULT/projects/project1/customization/lists',
 		headers: {
 //			'Content-Length':0,
 			'Content-Type':  'application/json',
@@ -97,27 +97,14 @@ function _startPrediction(req, res){
 		hostname:'web-proxy.isr.hp.com',
 		port: 8080,
 		path: req.query.almHost+'/qcbin/rest/domains/ANNA/projects/proj1/prediction',//http://myd-vm05784.hpswlabs.adapps.hp.com:8080/qcbin/rest/domains/DEFAULT/projects/project1/customization/lists',
+
 		headers: {
-			'Content-Length':0,
-			'Content-Type':  'application/json',
+			'Accept': 'application/json',
 			'Cookie':        currentSessionCookie[0]
 		}
 	};
-
+	console.log(options);
 	http.get(options, function(predictionResults){
-//		var body = "";
-//		loginRes.on('data', function(data) {
-//			body += data;
-//		});
-//		loginRes.on('end', function() {
-//			console.dir(loginRes.headers);
-//			if(loginRes.headers['set-cookie']) {
-//				currentSessionCookie =  loginRes.headers['set-cookie'];
-//			}
-//		});
-//		loginRes.on('error', function(e) {
-//			console.log("Got error: " + e.message);
-//		});
 		predictionResults.pipe(res);
 	});
 }

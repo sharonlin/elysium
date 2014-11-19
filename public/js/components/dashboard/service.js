@@ -8,7 +8,7 @@
 elysiumApp.factory("DashboardService",['MessageBus','ElysiumService', function(MessageBus, ElysiumService){
 
 	//Should handle projec list
-	var _projects = [{name:'p1', creator:'Jack Sparrow', creationDate:'18/11/2014 8:00', lastRunning:'18/11/2014 10:00'}];
+	var _projects = [{name:'p1', creator:'Jack Sparrow', creationDate:'18/11/2014 8:00', lastRunning:'18/11/2014 10:00', almHost:'http://myd-vm03386.hpswlabs.adapps.hp.com:8080'}];
 
 	function _getAllProjects(){
 		return _projects;

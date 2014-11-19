@@ -8,6 +8,16 @@
 
 var elysiumApp = angular.module('elysiumApp', ['chieffancypants.loadingBar', 'ngRoute', 'ui.date']);
 
+elysiumApp.directive('toggle', function() {
+	return function(scope, elem, attrs) {
+		scope.$on('event:toggle', function() {
+			//elem.slideToggle();
+			elem.toggle("slide");
+			//elem.hide("slide");
+		});
+	};
+});
+
 // configure our routes
 elysiumApp.config(function($routeProvider, $locationProvider) {
 

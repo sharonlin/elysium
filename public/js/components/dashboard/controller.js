@@ -26,18 +26,19 @@ elysiumApp.controller('DashboardController', ['$scope', '$interval', '$timeout',
 	}
 
 	$scope.runPredict = function (project) {
-		ElysiumService.syncPrediction(function(error, predictionResults) {
-			cfpLoadingBar.start();
-			if (!error) {
-				if (predictionResults) {
 					TabsService.switchToReport(project);
-					console.log('fsfsfsf');
-					console.dir(predictionResults);
-					project.results = predictionResults;
-					cfpLoadingBar.complete();
-				}
-			}
-		});
+//					project.results = predictionResults;
+//		ElysiumService.syncPrediction(project, function(error, predictionResults) {
+//			cfpLoadingBar.start();
+//			if (!error) {
+//				if (predictionResults) {
+//					TabsService.switchToReport(project);
+//					console.dir(predictionResults);
+//					project.results = predictionResults;
+//					cfpLoadingBar.complete();
+//				}
+//			}
+//		});
 	}
 //	$scope.runPredict = function (project) {
 //		ElysiumService.startPrediction(project.modelId, '1/1/2014', function (error, predictionId) {

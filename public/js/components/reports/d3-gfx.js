@@ -97,14 +97,43 @@ function D3GFX(options) {
 
 	function _onFeatureMouseOver(d){
 		console.log('_onFeatureMouseOver '+ d.moduleName);
-		//d3.select(this).attr()
 		featureExtraInfo.group.attr("transform", "translate(" + xRange(d.x) + "," + yRange(d.y) + ")");
 		featureExtraInfo.featureName = d.moduleName;
-		featureExtraInfo.group.style("opacity", 1);
+
 		featureExtraInfo.currentScore.text(d.y);
+		var y = -1 * (d.y + 30);
 		featureExtraInfo.expectedScore
-			//.attr("transform", "translate(" + 0 + "," + yRange(d.y+30) + ")")
+//			.attr("transform", "translate(" + 0 + "," + y + ")")
+			.attr("x",0)
+			.attr("y",-1*(400 - yRange(30)))
 			.text(d.y + 30);
+
+		featureExtraInfo.yLine
+			.attr("x1",0)
+			.attr("y1",0)
+			.attr("x2",-xRange(d.x))
+			.attr("y2",0);
+
+		featureExtraInfo.xLine
+			.attr("x1",0)
+			.attr("y1",0)
+			.attr("x2",0)
+			.attr("y2",400-yRange(d.y));
+
+
+		featureExtraInfo.yLinePrediction
+			.attr("x1",0)
+			.attr("y1", -1*(400 - yRange(30)))
+			.attr("x2",-xRange(d.x))
+			.attr("y2",-1*(400 - yRange(30)));
+
+		featureExtraInfo.xLinePrediction
+			.attr("x1",0)
+			.attr("y1",-1*(400 - yRange(30)))
+			.attr("x2",0)
+			.attr("y2",0);
+
+		featureExtraInfo.group.style("opacity", 1);
 	}
 
 	function _onFeatureMouseOut(d) {
@@ -192,6 +221,7 @@ function D3GFX(options) {
 			.ease("elastic");
 
 
+		//Feature Extra Info Group
 		featureExtraInfo.group = visGroup.append("g")
 			.attr("id", "extraInfo")
 			.style("opacity", 0)
@@ -202,7 +232,7 @@ function D3GFX(options) {
 		featureExtraInfo.currentScore = featureExtraInfo.group.append("text")
 			.attr("x", 0)
 			.attr("y", 0)
-			.text("45")
+			.text("0")
 			.attr("text-anchor", "middle")
 			.attr("font-family", "sans-serif")
 			.attr("font-size", "18px")
@@ -213,12 +243,53 @@ function D3GFX(options) {
 		featureExtraInfo.expectedScore  = featureExtraInfo.group.append("text")
 			.attr("x", 0)
 			.attr("y", -40)
-			.text("80")
+			.text("0")
 			.attr("text-anchor", "middle")
 			.attr("font-family", "sans-serif")
 			.attr("font-size", "18px")
 			.attr("fill", "blue");
 
+		//Score Lines
+		featureExtraInfo.yLine = featureExtraInfo.group.append("line")
+			.attr("id", "yLine")
+			.attr("x1", 0)
+			.attr("y1", 0)
+			.attr("x2", 0)
+			.attr("y2", 0)
+			.style('stroke', 'black')
+			.style('stroke-width', '1px')
+			.style("stroke-dasharray", ("3, 3"));
+
+		featureExtraInfo.xLine = featureExtraInfo.group.append("line")
+			.attr("id", "xLine")
+			.attr("x1", 0)
+			.attr("y1", 0)
+			.attr("x2", 0)
+			.attr("y2", 0)
+			.style('stroke', 'black')
+			.style('stroke-width', '1px')
+			.style("stroke-dasharray", ("3, 3"));
+
+		//Prediction Lines
+		featureExtraInfo.yLinePrediction = featureExtraInfo.group.append("line")
+			.attr("id", "yLinePrediction")
+			.attr("x1", 0)
+			.attr("y1", 0)
+			.attr("x2", 0)
+			.attr("y2", 0)
+			.style('stroke', 'black')
+			.style('stroke-width', '1px')
+			.style("stroke-dasharray", ("3, 3"));
+
+		featureExtraInfo.xLinePrediction = featureExtraInfo.group.append("line")
+			.attr("id", "xLinePrediction")
+			.attr("x1", 0)
+			.attr("y1", 0)
+			.attr("x2", 0)
+			.attr("y2", 0)
+			.style('stroke', 'black')
+			.style('stroke-width', '1px')
+			.style("stroke-dasharray", ("3, 3"));
 		_addXAxis(visGroup);
 		_addYAxis(visGroup);
 	}

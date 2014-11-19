@@ -29,7 +29,7 @@ elysiumApp.controller('WizardController', ['$scope','$timeout', "$location", "Ta
 //						});
 //				});
 
-				ElysiumService.syncPrediction(function(error, predictionResults){
+				ElysiumService.syncPrediction($scope.project, function(error, predictionResults){
 					if(!error) {
 						console.dir(predictionResults);
 					}else {
