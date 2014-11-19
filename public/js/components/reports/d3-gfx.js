@@ -170,7 +170,6 @@ function D3GFX(options) {
 
 	function _renderGraph(data){
 		var colors = d3.scale.category10().range();
-
 		var vis = d3.select("#riskChart");
 		var visGroup = vis.append('svg:g').attr("transform", "translate(80,40)");
 		xRange = d3.scale.linear().range([0, 600]).domain(   //80/440
@@ -199,6 +198,51 @@ function D3GFX(options) {
 //		var yAxis = d3.svg.axis().scale(yRange).orient("left");
 //		vis.append("svg:g").call(xAxis).attr("transform", "translate(0,400)");
 //		vis.append("svg:g").call(yAxis).attr("transform", "translate(40,0)");
+
+
+		//Quad Top Left
+		visGroup.append("rect")
+			.attr("x", 0)
+			.attr("y", yRange(100))
+			.attr("width", xRange (100/2))
+			.attr("height", yRange (100/2))
+			.style("stroke", "black")
+			.style("stroke-width", 1)
+			.style('stroke-opacity', 0.8)
+			.style("fill", "rgb(235, 241,223)");
+		//Quad Top Right
+		visGroup.append("rect")
+			.attr("x", xRange (100/2))
+			.attr("y", yRange(100))
+			.attr("width", xRange (100/2))
+			.attr("height", yRange (100/2))
+			.style("stroke", "black")
+			.style("stroke-width", 1)
+			.style('stroke-opacity', 0.8)
+			.style("fill", "white");
+
+		//Quad Bottom Left
+		visGroup.append("rect")
+			.attr("x", 0)
+			.attr("y", yRange(100/2))
+			.attr("width", xRange (100/2))
+			.attr("height", yRange (100/2))
+			.style("stroke", "black")
+			.style("stroke-width", 1)
+			.style('stroke-opacity', 0.8)
+			.style("fill", "white");
+
+		//Quad Bottom Left
+		visGroup.append("rect")
+			.attr("x", xRange(100/2))
+			.attr("y", yRange(100/2))
+			.attr("width", xRange (100/2))
+			.attr("height", yRange (100/2))
+			.style("stroke", "black")
+			.style("stroke-width", 1)
+			.style('stroke-opacity', 0.8)
+			.style("fill", "rgb(242,220,218)");
+
 
 		var circles = visGroup.selectAll("circle").data(data);
 		circles.enter()

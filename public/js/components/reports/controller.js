@@ -16,7 +16,7 @@ elysiumApp.controller('ReportsController', ['$scope','$timeout','MessageBus' ,fu
 //			$timeout(function () {
 //				$scope.project = project;
 				$scope.project = {results:[
-					{moduleName:'A', prediction:50, recommendation:'Add 2 developers', x:100, y:57, complexity:15}
+					{moduleName:'A', prediction:50, recommendation:'Add 2 developers', x:85, y:57, complexity:15}
 					,{moduleName:'R', prediction:56, recommendation:'Add 2 developers', x:10, y:50, complexity:15}
 					,{moduleName:'O', prediction:68, recommendation:'Add 2 developers', x:80, y:30, complexity:22}
 					,{moduleName:'K', prediction:43, recommendation:'Add 2 developers', x:80, y:64, complexity:18}
@@ -24,8 +24,8 @@ elysiumApp.controller('ReportsController', ['$scope','$timeout','MessageBus' ,fu
 					,{moduleName:'F', prediction:11, recommendation:'Add 2 developers', x:70, y:86, complexity:17}
 					,{moduleName:'UU', prediction:59, recommendation:'Add 2 developers', x:54, y:65, complexity:25}
 					,{moduleName:'R', prediction:45, recommendation:'Add 2 developers', x:70, y:48, complexity:22}
-					,{moduleName:'J', prediction:11, recommendation:'Add 2 developers', x:100, y:50, complexity:19}
-					,{moduleName:'D', prediction:42, recommendation:'Add 2 developers', x:100, y:20, complexity:17}
+					,{moduleName:'J', prediction:11, recommendation:'Add 2 developers', x:78, y:50, complexity:19}
+					,{moduleName:'D', prediction:42, recommendation:'Add 2 developers', x:80, y:20, complexity:17}
 				]};
 				$scope.selectedItem = $scope.project.results[0];
 				InitChart();
