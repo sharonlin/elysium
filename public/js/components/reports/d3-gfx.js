@@ -93,12 +93,15 @@ function D3GFX(options) {
 			.attr("fill", "black");
 
 		yAxisGroup.append("text")
-			.attr("x", -80)
+			.attr("transform", "rotate(-90 -40,"+ Y_RANGE/2+")")
+			.attr("x", -40)
 			.attr("y", Y_RANGE/2)
-			.text("Quality")
+			.attr("text-anchor", "middle")
+			.text("Predicted Quality")
 			.attr("font-family", "sans-serif")
 			.attr("font-size", "20px")
-			.attr("fill", "black");
+			.attr("fill", "black")
+//			.style("writing-mode", "tb");
 	}
 
 	function _onFeatureMouseOver(d){
@@ -126,7 +129,7 @@ function D3GFX(options) {
 
 
 		featureExtraInfo.yLine
-			.attr("x1",-20)
+			.attr("x1",0)
 			.attr("y1",0)
 			.attr("x2",-xRange(d.x))
 			.attr("y2",0);
@@ -139,7 +142,7 @@ function D3GFX(options) {
 
 
 		featureExtraInfo.yLinePrediction
-			.attr("x1",-20)
+			.attr("x1",0)
 			.attr("y1", -1*(Y_RANGE - yRange(scoreGap)))
 			.attr("x2",-xRange(d.x))
 			.attr("y2",-1*(Y_RANGE - yRange(scoreGap)));
@@ -208,20 +211,44 @@ function D3GFX(options) {
 			.attr("y", yRange(100))
 			.attr("width", xRange (100/2))
 			.attr("height", yRange (100/2))
-			.style("stroke", "black")
-			.style("stroke-width", 1)
+			.style("stroke", "white")
+			.style("stroke-width", "4")
 			.style('stroke-opacity', 0.8)
-			.style("fill", "rgb(235, 241,223)");
+			.style("fill", "rgb(248, 252,248)");
+
+
+		visGroup.append("text")
+			.attr("x", 10)
+			.attr("y", yRange(100)+20)
+			.text("Quality Improved")
+			.attr("font-family", "sans-serif")
+			.attr("text-anchor", "start")
+			.attr("font-size", "14px")
+			.attr("fill", "grey")
+			.style('opacity', 0.5);
+
+
 		//Quad Top Right
 		visGroup.append("rect")
 			.attr("x", xRange (100/2))
 			.attr("y", yRange(100))
 			.attr("width", xRange (100/2))
 			.attr("height", yRange (100/2))
-			.style("stroke", "black")
-			.style("stroke-width", 1)
+			.style("stroke", "white")
+			.style("stroke-width", "4")
 			.style('stroke-opacity', 0.8)
-			.style("fill", "white");
+			.style("fill", "rgb(239, 248,240)");
+
+
+		visGroup.append("text")
+			.attr("x", xRange (100) - 10)
+			.attr("y", yRange(100) + 20)
+			.text("High Quality Mainteined")
+			.attr("font-family", "sans-serif")
+			.attr("text-anchor", "end")
+			.attr("font-size", "14px")
+			.attr("fill", "grey")
+			.style('opacity', 0.5);
 
 		//Quad Bottom Left
 		visGroup.append("rect")
@@ -229,21 +256,43 @@ function D3GFX(options) {
 			.attr("y", yRange(100/2))
 			.attr("width", xRange (100/2))
 			.attr("height", yRange (100/2))
-			.style("stroke", "black")
-			.style("stroke-width", 1)
+			.style("stroke", "white")
+			.style("stroke-width", "4")
 			.style('stroke-opacity', 0.8)
-			.style("fill", "white");
+			.style("fill", "rgb(255,249,250)");
 
-		//Quad Bottom Left
+
+		visGroup.append("text")
+			.attr("x", 10)
+			.attr("y", yRange(0) - 20)
+			.text("Low Quality Maintained")
+			.attr("font-family", "sans-serif")
+			.attr("text-anchor", "start")
+			.attr("font-size", "14px")
+			.attr("fill", "grey")
+			.style('opacity', 0.5);
+
+		//Quad Bottom right
 		visGroup.append("rect")
 			.attr("x", xRange(100/2))
 			.attr("y", yRange(100/2))
 			.attr("width", xRange (100/2))
 			.attr("height", yRange (100/2))
-			.style("stroke", "black")
-			.style("stroke-width", 1)
+			.style("stroke", "white")
+			.style("stroke-width", "4")
 			.style('stroke-opacity', 0.8)
-			.style("fill", "rgb(242,220,218)");
+			.style("fill", "rgb(255,241,243)");
+
+		visGroup.append("text")
+			.attr("x", xRange(100) - 10)
+			.attr("y",  yRange(0) - 20)
+			.text("Low Quality Maintained")
+			.attr("font-family", "sans-serif")
+			.attr("text-anchor", "end")
+			.attr("font-size", "14px")
+			.attr("fill", "grey")
+			.style('opacity', 0.5);
+
 
 		var drops = visGroup.selectAll("path").data(data);
 		drops.enter()
@@ -347,9 +396,9 @@ function D3GFX(options) {
 			.attr("x2", 0)
 			.attr("y2", 0)
 			.style('stroke', 'black')
-			.style('stroke-width', '1px')
-			.style("stroke-dasharray", ("3, 6"))
-			.style("stroke-opacity", 0.9);
+			.style('stroke-width', '2px')
+			.style("stroke-dasharray", ("3, 2"))
+			.style("stroke-opacity", 0.6);
 
 		featureExtraInfo.xLine = featureExtraInfo.group.append("line")
 			.attr("id", "xLine")
@@ -358,9 +407,9 @@ function D3GFX(options) {
 			.attr("x2", 0)
 			.attr("y2", 0)
 			.style('stroke', 'black')
-			.style('stroke-width', '1px')
-			.style("stroke-dasharray", ("3, 6"))
-			.style("stroke-opacity", 0.9);
+			.style('stroke-width', '2px')
+			.style("stroke-dasharray", ("3, 2"))
+			.style("stroke-opacity", 0.6);
 
 		//Prediction Lines
 		featureExtraInfo.yLinePrediction = featureExtraInfo.group.append("line")
@@ -370,9 +419,9 @@ function D3GFX(options) {
 			.attr("x2", 0)
 			.attr("y2", 0)
 			.style('stroke', 'black')
-			.style('stroke-width', '1px')
-			.style("stroke-dasharray", ("3, 6"))
-			.style("stroke-opacity", 0.9);
+			.style('stroke-width', '2px')
+			.style("stroke-dasharray", ("3, 2"))
+			.style("stroke-opacity", 0.6);
 
 		featureExtraInfo.xLinePrediction = featureExtraInfo.group.append("line")
 			.attr("id", "xLinePrediction")
@@ -381,9 +430,9 @@ function D3GFX(options) {
 			.attr("x2", 0)
 			.attr("y2", 0)
 			.style('stroke', 'black')
-			.style('stroke-width', '1px')
-			.style("stroke-dasharray", ("3, 6"))
-			.style("stroke-opacity", 0.9);
+			.style('stroke-width', '2px')
+			.style("stroke-dasharray", ("3, 2"))
+			.style("stroke-opacity", 0.6);
 		_addXAxis(visGroup);
 		_addYAxis(visGroup);
 	}
