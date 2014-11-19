@@ -11,8 +11,8 @@ function D3GFX(options) {
 	var xRange, yRange;
 	var isScoreOver = false;
 	var _featureClickedListener;
-	var X_RANGE = 600;
-	var Y_RANGE = 400;
+	var X_RANGE = 700;
+	var Y_RANGE = 300;
 	_addDropShadowFilter(options);
 	function _addDropShadowFilter(options) {
 		svg = d3.select(options.elSvg);
@@ -37,7 +37,7 @@ function D3GFX(options) {
 	}
 
 	function _addXAxis(visGroup){
-		var xAxisGroup = visGroup.append('svg:g').attr("transform", "translate(0,400)");
+		var xAxisGroup = visGroup.append('svg:g').attr("transform", "translate(0,"+Y_RANGE+")");
 		xAxisGroup.append("line")
 			.attr("x1", 0)
 			.attr("y1", 0)
@@ -62,11 +62,13 @@ function D3GFX(options) {
 			.attr("fill", "black");
 
 		xAxisGroup.append("text")
-			.attr("x", 120)
+			.attr("x", xRange(100/2))
 			.attr("y", 50)
-			.text("Feature Complexity")
+			.text("Actual Quality in Former Release")
+			.attr("text-anchor", "middle")
 			.attr("font-family", "sans-serif")
 			.attr("font-size", "20px")
+			.attr("font-wight", "bold")
 			.attr("fill", "black");
 	}
 
@@ -172,7 +174,7 @@ function D3GFX(options) {
 		var colors = d3.scale.category10().range();
 		var vis = d3.select("#riskChart");
 		var visGroup = vis.append('svg:g').attr("transform", "translate(80,40)");
-		xRange = d3.scale.linear().range([0, 600]).domain(   //80/440
+		xRange = d3.scale.linear().range([0, X_RANGE]).domain(   //80/440
 			[0,100]
 //			[d3.min(data, function (d) {
 //			return (d.x);
@@ -181,7 +183,7 @@ function D3GFX(options) {
 //				return d.x;
 //			})]
 		);
-		yRange = d3.scale.linear().range([400, 0]).domain(   //440,80
+		yRange = d3.scale.linear().range([Y_RANGE, 0]).domain(   //440,80
 			[
 				0,100
 			]
