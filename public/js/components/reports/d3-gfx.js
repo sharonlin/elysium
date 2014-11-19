@@ -100,28 +100,31 @@ function D3GFX(options) {
 	}
 
 	function _onFeatureMouseOver(d){
-		console.log('_onFeatureMouseOver '+ d.moduleName);
+		console.log('_onFeatureMouseOver '+ d.name);
 
 	//.style("stroke", "LightBlue")
 //			.style("stroke-width", "5")
-		featureExtraInfo.group.attr("transform", "translate(" + xRange(d.x) + "," + yRange(d.y) + ")");
-		featureExtraInfo.featureName = d.moduleName;
+		featureExtraInfo.group
+			.attr("class", "extra-info")
+			.attr("transform", "translate(" + xRange(d.x) + "," + yRange(d.score) + ")");
+
+		featureExtraInfo.featureName = d.name;
 		featureExtraInfo.currentScore
 			.attr("x",0)
 			.attr("y",+5)
-			.text(d.y);
+			.text(d.score);
 
-		var y = -1 * (d.y + 30);
-
+		//var y = -1 * (d.y + 30);
+		var scoreGap = d.afterImprovement - d.score;
 		featureExtraInfo.expectedScore
 			.attr("x",0)
-			.attr("y",-1*(Y_RANGE - yRange(30)) +5)
-			.text(d.y + 30);
+			.attr("y",-1*(Y_RANGE - yRange(scoreGap)) +5)
+			.text(d.afterImprovement);
 
 		featureExtraInfo.expectedScoreCircle
 			.attr("cx",0)
-			.attr("cy",-1*(Y_RANGE - yRange(30)))
-			.attr("r", d.complexity);
+			.attr("cy",-1*(Y_RANGE - yRange(scoreGap)))
+			.attr("r", d.size);
 
 
 
@@ -135,18 +138,18 @@ function D3GFX(options) {
 			.attr("x1",0)
 			.attr("y1",0)
 			.attr("x2",0)
-			.attr("y2",Y_RANGE-yRange(d.y));
+			.attr("y2",Y_RANGE-yRange(d.score));
 
 
 		featureExtraInfo.yLinePrediction
 			.attr("x1",-20)
-			.attr("y1", -1*(Y_RANGE - yRange(30)))
+			.attr("y1", -1*(Y_RANGE - yRange(scoreGap)))
 			.attr("x2",-xRange(d.x))
-			.attr("y2",-1*(Y_RANGE - yRange(30)));
+			.attr("y2",-1*(Y_RANGE - yRange(scoreGap)));
 
 		featureExtraInfo.xLinePrediction
 			.attr("x1",0)
-			.attr("y1",-1*(Y_RANGE - yRange(30)))
+			.attr("y1",-1*(Y_RANGE - yRange(scoreGap)))
 			.attr("x2",0)
 			.attr("y2",0);
 
@@ -154,12 +157,12 @@ function D3GFX(options) {
 	}
 
 	function _onFeatureMouseOut(d) {
-//		console.log('_onFeatureMouseOut '+ d.moduleName + ' ,isScoreOver '+isScoreOver );
-		setTimeout(function(){
-			if(isScoreOver === false) {
+		console.log('_onFeatureMouseOut '+ d.module + ' ,isScoreOver '+isScoreOver );
+//		setTimeout(function(){
+//			if(isScoreOver === false) {
 				featureExtraInfo.group.style("opacity", 0);
-			}
-		},500);
+//			}
+//		},500);
 	}
 
 	function _onScoreMouseOver() {
@@ -250,17 +253,21 @@ function D3GFX(options) {
 		circles.enter()
 			.insert("circle")
 			.attr("cx", function (d) { return xRange (d.x); })
-			.attr("cy", function (d) { return yRange (d.y); })
+			.attr("cy", function (d) { return yRange (d.score); })
 			.attr("r", "0")
 			.attr("filter", "url(#drop-shadow)")
 			.style("fill", function(d,i){return colors[i];})
+			.style("cursor", "pointer")
 			.on('mouseover',_onFeatureMouseOver)
-			.on('mouseout', _onFeatureMouseOut);
+			.on('mouseout', _onFeatureMouseOut)
+			.on("click", function() {
+				_featureClickedListener(featureExtraInfo.featureName);
+			});
 
 		circles.transition()
 			.duration(1000)
 			.delay(function(d,i){return i * 100})
-			.attr("r", function(d){return d.complexity;})
+			.attr("r", function(d){return d.size;})
 			.ease("elastic");
 
 
@@ -268,8 +275,9 @@ function D3GFX(options) {
 		labels.enter()
 			.insert("text")
 			.attr("x", function (d) { return xRange (d.x); })
-			.attr("y", function (d) { return yRange (d.y + d.complexity/2 - 3); })
-			.text(function(d){return d.moduleName;})
+//			.attr("y", function (d) { return yRange (d.y + d.complexity/2 - 3); })
+			.attr("y", function (d) { return yRange (d.score + d.size/2 - 3); })
+			.text(function(d){return d.name;})
 			.attr("font-family", "sans-serif")
 			.attr("font-size", "18px")
 			.attr("fill", "black")
@@ -285,10 +293,8 @@ function D3GFX(options) {
 		//Feature Extra Info Group
 		featureExtraInfo.group = visGroup.append("g")
 			.attr("id", "extraInfo")
-			.style("opacity", 0)
-			.on("click", function(d) {
-				_featureClickedListener(featureExtraInfo.featureName);
-			});
+			.style("opacity", 0);
+
 
 		featureExtraInfo.currentScore = featureExtraInfo.group.append("text")
 			.attr("x", 0)

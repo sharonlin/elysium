@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" name="Default" comment="" />
+    <list default="true" id="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/components/reports/controller.js" afterPath="$PROJECT_DIR$/public/js/components/reports/controller.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/components/reports/d3-gfx.js" afterPath="$PROJECT_DIR$/public/js/components/reports/d3-gfx.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/elysium.css" afterPath="$PROJECT_DIR$/public/css/elysium.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/components/reports/reports.html" afterPath="$PROJECT_DIR$/public/js/components/reports/reports.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="elysium.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/index.html" changelist="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" time="1416143961527" ignored="false" />
@@ -9,15 +15,15 @@
     <file path="/dashboard.html" changelist="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" time="1415537658402" ignored="false" />
     <file path="/wizard.html" changelist="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" time="1415278750602" ignored="false" />
     <file path="/resports.html" changelist="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" time="1413807401483" ignored="false" />
-    <file path="/controller.js" changelist="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" time="1416395752403" ignored="false" />
+    <file path="/controller.js" changelist="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" time="1416400814355" ignored="false" />
     <file path="/a.dummy" changelist="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" time="1416324533584" ignored="false" />
     <file path="/elysium-service.js" changelist="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" time="1416388025877" ignored="false" />
     <file path="/main-controller.js" changelist="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" time="1413881589323" ignored="false" />
     <file path="/tabs-service.js" changelist="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" time="1415275913377" ignored="false" />
     <file path="/service.js" changelist="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" time="1416324805947" ignored="false" />
-    <file path="/elysium.css" changelist="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" time="1416310968531" ignored="false" />
+    <file path="/elysium.css" changelist="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" time="1416401138803" ignored="false" />
     <file path="/tabs-controller.js" changelist="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" time="1414046976637" ignored="false" />
-    <file path="/Dummy.txt" changelist="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" time="1415013896084" ignored="false" />
+    <file path="/Dummy.txt" changelist="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" time="1416402883100" ignored="false" />
     <file path="$PROJECT_DIR$/../hub-application/webapp/src/main/webapp/resources/js/components/pipeline-editor/pipeline-editor-directive.html" changelist="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" time="1414928622714" ignored="false" />
     <file path="$PROJECT_DIR$/../hub-application/webapp/src/main/webapp/resources/js/components/pipeline-editor/gfx.js" changelist="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" time="1414928622714" ignored="false" />
     <file path="$PROJECT_DIR$/../hub-application/webapp/src/main/webapp/resources/js/components/dashboard/dashboard-controller.js" changelist="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" time="1414928622714" ignored="false" />
@@ -31,9 +37,9 @@
     <file path="$PROJECT_DIR$/../hub-application/webapp/src/main/webapp/resources/js/components/live-pipelines/live-pipelines-controller.js" changelist="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" time="1414938548900" ignored="false" />
     <file path="$PROJECT_DIR$/../hub-application/webapp/src/main/webapp/resources/js/components/live-pipelines/live-pipelines-template.html" changelist="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" time="1415013933271" ignored="false" />
     <file path="/message-bus.js" changelist="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" time="1415275971941" ignored="false" />
-    <file path="/reports.html" changelist="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" time="1416398739409" ignored="false" />
+    <file path="/reports.html" changelist="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" time="1416402821200" ignored="false" />
     <file path="/count-up.js" changelist="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" time="1415879184276" ignored="false" />
-    <file path="/d3-gfx.js" changelist="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" time="1416398635232" ignored="false" />
+    <file path="/d3-gfx.js" changelist="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" time="1416402772613" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +103,7 @@
       <file leaf-file-name="controller.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/js/components/reports/controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="92" selection-start="1525" selection-end="1525" vertical-scroll-proportion="-10.814815">
+            <state line="69" column="53" selection-start="2499" selection-end="2499" vertical-scroll-proportion="-18.11111">
               <folding />
             </state>
           </provider>
@@ -115,8 +121,10 @@
       <file leaf-file-name="reports.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/js/components/reports/reports.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="51" selection-start="235" selection-end="235" vertical-scroll-proportion="0.21464646">
+            <state line="3" column="49" selection-start="164" selection-end="164" vertical-scroll-proportion="0.07488987">
               <folding>
+                <element signature="n#style#0;n#a#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
               </folding>
@@ -127,7 +135,7 @@
       <file leaf-file-name="elysium.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/css/elysium.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="59" selection-start="730" selection-end="730" vertical-scroll-proportion="0.0">
+            <state line="29" column="3" selection-start="886" selection-end="886" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -145,7 +153,7 @@
       <file leaf-file-name="d3-gfx.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/js/components/reports/d3-gfx.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="21" selection-start="314" selection-end="314" vertical-scroll-proportion="0.0">
+            <state line="259" column="12" selection-start="7163" selection-end="7190" vertical-scroll-proportion="-17.0">
               <folding />
             </state>
           </provider>
@@ -194,6 +202,14 @@
       <setting name="OPEN_NEW_TAB" value="false" />
     </FindUsagesManager>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitLogSettings">
+    <option name="myDateState">
+      <MyDateState />
+    </option>
+  </component>
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
@@ -208,9 +224,9 @@
         <option value="$PROJECT_DIR$/public/js/api/elysium-service.js" />
         <option value="$PROJECT_DIR$/public/js/components/wizard/controller.js" />
         <option value="$PROJECT_DIR$/api/elysium-service.js" />
-        <option value="$PROJECT_DIR$/public/css/elysium.css" />
         <option value="$PROJECT_DIR$/public/js/app.js" />
         <option value="$PROJECT_DIR$/public/js/components/reports/controller.js" />
+        <option value="$PROJECT_DIR$/public/css/elysium.css" />
         <option value="$PROJECT_DIR$/public/js/components/reports/d3-gfx.js" />
         <option value="$PROJECT_DIR$/public/js/components/reports/reports.html" />
       </list>
@@ -222,7 +238,7 @@
     <option name="width" value="1698" />
     <option name="height" value="970" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
     <OptionsSetting value="true" id="Checkout" />
@@ -634,7 +650,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1698" height="970" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -653,8 +669,8 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17625459" sideWeight="0.5802005" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4197995" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19461444" sideWeight="0.93734336" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.06265664" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2756892" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -814,13 +830,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/elysium.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="59" selection-start="730" selection-end="730" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/api/elysium-service.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="104" column="6" selection-start="3376" selection-end="3376" vertical-scroll-proportion="0.0">
@@ -837,22 +846,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/components/reports/controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="92" selection-start="1525" selection-end="1525" vertical-scroll-proportion="-10.814815">
+        <state line="69" column="53" selection-start="2499" selection-end="2499" vertical-scroll-proportion="-18.11111">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/elysium.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="3" selection-start="886" selection-end="886" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/components/reports/d3-gfx.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="21" selection-start="314" selection-end="314" vertical-scroll-proportion="0.0">
+        <state line="259" column="12" selection-start="7163" selection-end="7190" vertical-scroll-proportion="-17.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/components/reports/reports.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="51" selection-start="235" selection-end="235" vertical-scroll-proportion="0.21464646">
+        <state line="3" column="49" selection-start="164" selection-end="164" vertical-scroll-proportion="0.07488987">
           <folding>
+            <element signature="n#style#0;n#a#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
           </folding>

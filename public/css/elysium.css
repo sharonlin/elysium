@@ -27,6 +27,11 @@ p { color: #f8f8f8; font-family: 'Raleway',sans-serif; font-size: 18px; font-wei
     border-top-right-radius: 0px;
 }
 
+.extra-info
+{
+    pointer-events: none;
+}
+
 .projectBox {
     display: inline-block;
     float: left;
