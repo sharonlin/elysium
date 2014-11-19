@@ -6,18 +6,15 @@
         <div class="col-md-6" style="padding-top:50px;padding-left:10px;height:500px; border: 1px black solid">
         <svg id="riskChart" width="800" height="500"></svg>
         </div>
+
         <div class="col-md-6" style="height:500px; border-right: 1px black solid;border-top: 1px black solid;border-bottom: 1px black solid;display: none;" toggle>
             <div class="row">
                 <div class="col-md-4" style="height:500px; background:white; padding: 0">
                     <div class="list-group">
-                        <a ng-repeat="result in project.results | orderBy:'prediction':true" href="#" class="list-group-item"  ng-class="{active: result === selectedItem}" ng-click="selectItem(result)" style="font-family:courier;font-size:140%;font-weight: bold;text-decoration: none;padding-top:18px;padding-bottom:18px;">
+                          <a ng-repeat="result in project.results | orderBy:'score':true" href="#" class="list-group-item"  ng-class="{active: result === selectedItem}" ng-click="selectItem(result)" style="font-family:'HP Simplified';font-size:140%;font-weight: bold;text-decoration: none;padding-top:18px;padding-bottom:18px;">
                                Feature {{result.name}}
-                            <div style="padding-right:40px;color: red;font-weight: bold;float: right;font-family:courier;font-size:110%;">
-                                <count-up count-to="result.score" interval="((result.score/20)*1000) / result.score" ></count-up>
-                        <a ng-repeat="result in project.results | orderBy:'prediction':true" href="#" class="list-group-item"  ng-class="{active: result === selectedItem}" ng-click="selectItem(result)" style="font-family:'HP Simplified';font-size:140%;font-weight: bold;text-decoration: none;padding-top:18px;padding-bottom:18px;">
-                               Feature {{result.moduleName}}
                             <div style="padding-right:40px;color: red;font-weight: bold;float: right;font-family:'HP Simplified';font-size:110%;">
-                                <count-up count-to="result.prediction" interval="((result.prediction/20)*1000) / result.prediction" ></count-up>
+                                <count-up count-to="result.score" interval="((result.score/20)*1000) / result.score" ></count-up>
                             </div>
                             <!--<svg width="100" height="25">&ndash;&gt;-->
                                 <!--<g>-->
@@ -44,7 +41,7 @@
                                 </div>
 
                                 <div class="col-md-4 column">
-                                    <span class="number" ng-class="{'number-negative': (selectedItem.prediction)<=70,'number-positive': (selectedItem.prediction >70)}"> {{selectedItem.prediction}}</span>
+                                    <span class="number" ng-class="{'number-negative': (selectedItem.score)<=70,'number-positive': (selectedItem.score >70)}"> {{selectedItem.score}}</span>
                                 </div>
                             </div>
 
@@ -55,7 +52,7 @@
                                     <br>If recommendation adopted
                                 </div>
                                 <div class="col-md-4 column">
-                                     <span class="number" ng-class="{'number-negative': (selectedItem.prediction+30)<=70,'number-positive': (selectedItem.prediction+30) >70}"> {{selectedItem.prediction+30}}</span>
+                                     <span class="number" ng-class="{'number-negative': (selectedItem.afterImprovement)<=70,'number-positive': (selectedItem.afterImprovement) >70}"> {{selectedItem.afterImprovement}}</span>
                                 </div>
                             </div>
                             <br>
@@ -67,11 +64,6 @@
                                 <span class="hand-icon"><span class="hint-text">Recommending to fix more defects</span></span>
 
                             </div>
-
-
-
-
-
                     </div>
 
                 </div>
@@ -80,34 +72,4 @@
 
         </div>
      </div>
-</div>
-
-
-<!--<table class="table">-->
-<!--<thead>-->
-<!--<tr>-->
-<!--<th class="col-md-2">Feature</th>-->
-<!--<th class="col-md-2">Quality Score</th>-->
-<!--</tr>-->
-<!--</thead>-->
-<!--<tbody>-->
-<!--<tr ng-repeat="result in project.results">-->
-<!--<td>{{result.moduleName}}</td>-->
-<!--<td style="padding-left: 50px;">-->
-<!--<svg width="100" height="25">-->
-<!--<g>-->
-<!--<rect width="{{result.prediction}}" height="25" style="fill:red;stroke-width:3;stroke:rgb(0,0,0)">-->
-<!--<animate attributeName="width" from="0" to="{{result.prediction}}" dur="{{result.prediction/20}}s"/>-->
-<!--</rect>-->
-<!--&lt;!&ndash;<text x="0" y="0" fill="black">{{result.prediction}}%</text>&ndash;&gt;-->
-<!--&lt;!&ndash;<text x="0" y="15" fill="red">{{result.prediction}}%</text>&ndash;&gt;-->
-<!--</g>-->
-<!--</svg>-->
-
-<!--<count-up count-to="result.prediction" interval="((result.prediction/20)*1000) / result.prediction" ></count-up>-->
-<!--</td>-->
-<!--&lt;!&ndash;<td>{{result.recommendation}}</td>&ndash;&gt;-->
-<!--</tr>-->
-<!--</tbody>-->
-<!--</table>-->
-
+    </div>

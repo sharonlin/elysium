@@ -62,7 +62,7 @@ elysiumApp.controller('ReportsController', ['$scope','$timeout','MessageBus' ,fu
 						"afterImprovement": "0.45"
 					},
 					{
-					"name": "A",
+					"name": "T",
 					"size": "24",
 					"x": "27",
 					"score": "0.24",

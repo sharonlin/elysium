@@ -56,6 +56,18 @@ elysiumApp.factory("ElysiumService", ['$http', function ($http) {
 		});
 
 	};
+	function _almSession(options, cb) {
+		console.log('ALM Session Creation '+options.almHost);
+
+		$http.get('api/almSession?almHost='+options.almHost)
+			.success(function(data, status){
+				console.log('Session Created Successfully');
+				cb();
+			}).error(function (data, status) {
+				cb('ALM Session Craetion Failure');
+			});
+
+	};
 
 	function _getFields(options, cb) {
 		$http.get('api/getDBFields?almHost='+options.almHost)
@@ -69,6 +81,7 @@ elysiumApp.factory("ElysiumService", ['$http', function ($http) {
 
 	return {
 		almLogin: _almLogin,
+		almSession: _almSession,
 		getFields: _getFields,
 		configure: _configure,
 		startPrediction: _startPrediction,

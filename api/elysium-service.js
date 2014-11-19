@@ -6,7 +6,48 @@
  * To change this template use File | Settings | File Templates.
  */
 var http = require('http');
-var currentSessionCookie;
+var currentLoginSessionCookie;
+var currentALMSessionCookies = '';
+function _almSession(req, res) {
+	console.log('ALM Session Host:'+req.query.almHost);
+	var options = {
+		//host: 'myd-vm05784.hpswlabs.adapps.hp.com',
+		hostname:'web-proxy.isr.hp.com',
+		port: 8080,
+		path: req.query.almHost+'/qcbin/rest/site-session',
+		method: 'POST',
+		headers:{
+//			'Content-Length': 0,
+//			'Content-Type':  'application/xml',
+			'Cookie':        currentLoginSessionCookie[0]
+		}
+	};
+
+	var request = http.request(options, function(almRes){
+		console.log("Post Session Creation");
+		var body = "";
+		almRes.on('data', function(data) {
+			body += data;
+		});
+		almRes.on('end', function() {
+			console.log('Session Created');
+			console.dir(almRes.headers);
+			currentALMSessionCookies = '';
+			currentALMSessionCookies+=currentLoginSessionCookie[0];
+			if(almRes.headers['set-cookie']) {
+				for(var i = 0 ; i < almRes.headers['set-cookie'].length; i++){
+					currentALMSessionCookies+=';'+almRes.headers['set-cookie'][i]
+				}
+				res.status(almRes.statusCode).send('Session Created Successfully');
+			}});
+		almRes.on('error', function(e) {
+			console.log("ALM Create Session Error: " + e.message);
+			res.status(almRes.statusCode).send('Session Creation Failure');
+		});
+	});
+	request.end();
+}
+
 function _almLogin(req, res){
 	console.log('ALM Login Host:'+req.query.almHost);
 	var options = {
@@ -26,14 +67,14 @@ function _almLogin(req, res){
 			console.log('Login End');
 			console.dir(almRes.headers);
 			if(almRes.headers['set-cookie']) {
-				currentSessionCookie = almRes.headers['set-cookie'];
-				Object.defineProperty(almRes.headers, 'set-cookie', {
-					value: almRes.headers['set-cookie'],
-					writable: true,
-					enumerable: true,
-					configurable: true
-				});
-				res.header("Access-Control-Allow-Credentials", true);
+				currentLoginSessionCookie = almRes.headers['set-cookie'];
+//				Object.defineProperty(almRes.headers, 'set-cookie', {
+//					value: almRes.headers['set-cookie'],
+//					writable: true,
+//					enumerable: true,
+//					configurable: true
+//				});
+//				res.header("Access-Control-Allow-Credentials", true);
 				console.log('ALM Headers');
 				console.dir(almRes.headers);
 				res.status(almRes.statusCode).send('login successful');
@@ -91,7 +132,7 @@ function _startPrediction(req, res){
 //	console.log('startPrediction '+req.body.predictionId);
 
 	console.log('Start Prediction');
-	console.dir(currentSessionCookie);
+	console.dir(currentALMSessionCookies);
 	var options = {
 		//host: 'myd-vm05784.hpswlabs.adapps.hp.com',
 		hostname:'web-proxy.isr.hp.com',
@@ -100,7 +141,7 @@ function _startPrediction(req, res){
 
 		headers: {
 			'Accept': 'application/json',
-			'Cookie':        currentSessionCookie[0]
+			'Cookie':        currentALMSessionCookies
 		}
 	};
 	console.log(options);
@@ -124,6 +165,7 @@ function _init(app, router){
 	app.use('/api', router);
 
 	router.get('/almLogin', _almLogin);
+	router.get('/almSession', _almSession);
 	router.get('/getDBFields', _getDBFields);
 	router.post('/configure', _configure);
 //	router.post('/run', _startPrediction);

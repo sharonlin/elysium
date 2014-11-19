@@ -13,6 +13,8 @@ function D3GFX(options) {
 	var _featureClickedListener;
 	var X_RANGE = 700;
 	var Y_RANGE = 300;
+	var DROP_WIDTH = 377;
+	var DROP_HEIGHT = 471;
 	_addDropShadowFilter(options);
 	function _addDropShadowFilter(options) {
 		svg = d3.select(options.elSvg);
@@ -102,30 +104,25 @@ function D3GFX(options) {
 	function _onFeatureMouseOver(d){
 		console.log('_onFeatureMouseOver '+ d.name);
 
-	//.style("stroke", "LightBlue")
-//			.style("stroke-width", "5")
 		featureExtraInfo.group
 			.attr("class", "extra-info")
 			.attr("transform", "translate(" + xRange(d.x) + "," + yRange(d.score) + ")");
 
+
 		featureExtraInfo.featureName = d.name;
 		featureExtraInfo.currentScore
-			.attr("x",0)
-			.attr("y",+5)
+			.attr("x",((DROP_WIDTH *(d.size/120))/4.0) - 10)
+			.attr("y",-((DROP_HEIGHT *(d.size/120)) / 2.0))
 			.text(d.score);
 
-		//var y = -1 * (d.y + 30);
 		var scoreGap = d.afterImprovement - d.score;
 		featureExtraInfo.expectedScore
 			.attr("x",0)
-			.attr("y",-1*(Y_RANGE - yRange(scoreGap)) +5)
+			.attr("y",-1*(Y_RANGE - yRange(scoreGap)) - (DROP_HEIGHT *(d.size/120)/2.0))
 			.text(d.afterImprovement);
 
-		featureExtraInfo.expectedScoreCircle
-			.attr("cx",0)
-			.attr("cy",-1*(Y_RANGE - yRange(scoreGap)))
-			.attr("r", d.size);
-
+		featureExtraInfo.expectedScoreDrop
+			.attr("transform", "translate("+(-1*((DROP_WIDTH * (d.size/120))/2))+"," + ((-1*(Y_RANGE - yRange(scoreGap)))  -  (DROP_HEIGHT *(d.size/120)))+ "), scale ("+ (d.size/120) + ")");
 
 
 		featureExtraInfo.yLine
@@ -248,13 +245,11 @@ function D3GFX(options) {
 			.style('stroke-opacity', 0.8)
 			.style("fill", "rgb(242,220,218)");
 
-
-		var circles = visGroup.selectAll("circle").data(data);
-		circles.enter()
-			.insert("circle")
-			.attr("cx", function (d) { return xRange (d.x); })
-			.attr("cy", function (d) { return yRange (d.score); })
-			.attr("r", "0")
+		var drops = visGroup.selectAll("path").data(data);
+		drops.enter()
+			.insert("path")
+			.attr("transform", function(d){return "translate(" + (xRange(d.x)  - ((377 *(d.size/120)) / 2.0))  + "," + (yRange(d.score) -  ((431 *(d.size/120))))+"), scale ("+(d.size/120)+")";})
+			.attr("d", "M292.464,292.479c-31.658,31.625-121.129,121.129-121.129,121.129S85.417,327.69,50.19,292.463c-66.913-66.914-66.922-175.367-0.016-242.274c66.905-66.905,175.391-66.929,242.305-0.015C359.393,117.088,359.369,225.574,292.464,292.479z")
 			.attr("filter", "url(#drop-shadow)")
 			.style("fill", function(d,i){return colors[i];})
 			.style("cursor", "pointer")
@@ -264,21 +259,38 @@ function D3GFX(options) {
 				_featureClickedListener(featureExtraInfo.featureName);
 			});
 
-		circles.transition()
-			.duration(1000)
-			.delay(function(d,i){return i * 100})
-			.attr("r", function(d){return d.size;})
-			.ease("elastic");
+
+
+//		var circles = visGroup.selectAll("circle").data(data);
+//		circles.enter()
+//			.insert("circle")
+//			.attr("cx", function (d) { return xRange (d.x); })
+//			.attr("cy", function (d) { return yRange (d.score); })
+//			.attr("r", "0")
+//			.attr("filter", "url(#drop-shadow)")
+//			.style("fill", function(d,i){return colors[i];})
+//			.style("cursor", "pointer")
+//			.on('mouseover',_onFeatureMouseOver)
+//			.on('mouseout', _onFeatureMouseOut)
+//			.on("click", function() {
+//				_featureClickedListener(featureExtraInfo.featureName);
+//			});
+//
+//		circles.transition()
+//			.duration(1000)
+//			.delay(function(d,i){return i * 100})
+//			.attr("r", function(d){return d.size;})
+//			.ease("elastic");
 
 
 		var labels = visGroup.selectAll("text").data(data);
 		labels.enter()
 			.insert("text")
 			.attr("x", function (d) { return xRange (d.x); })
-//			.attr("y", function (d) { return yRange (d.y + d.complexity/2 - 3); })
-			.attr("y", function (d) { return yRange (d.score + d.size/2 - 3); })
+			.attr("y", function (d) { return yRange (d.score) + 20; })
 			.text(function(d){return d.name;})
 			.attr("font-family", "sans-serif")
+			.attr("text-anchor", "middle")
 			.attr("font-size", "18px")
 			.attr("fill", "black")
 			.style('opacity', 0);
@@ -304,19 +316,18 @@ function D3GFX(options) {
 			.attr("font-family", "courier")
 			.attr("font-size", "18px")
 			.attr("font-weight", "bold")
-			.attr("fill", "white")
-			.on('mouseover',_onScoreMouseOver)
-			.on('mouseout',_onScoreMouseOut);
+			.attr("fill", "black");
 
-		featureExtraInfo.expectedScoreCircle  = featureExtraInfo.group.append("circle")
-			.attr("cx", 0)
-			.attr("cy", 0)
-			.attr("r", "0")
+		featureExtraInfo.expectedScoreDrop  = featureExtraInfo.group.append("path")
+			.attr("d", "M292.464,292.479c-31.658,31.625-121.129,121.129-121.129,121.129S85.417,327.69,50.19,292.463c-66.913-66.914-66.922-175.367-0.016-242.274c66.905-66.905,175.391-66.929,242.305-0.015C359.393,117.088,359.369,225.574,292.464,292.479z")
 			.attr("filter", "url(#drop-shadow)")
-			.style("stroke", "LightGreen")
-			.style("stroke-width", "8")
-			.style("fill", "Lavender")
+//			.attr("transform", function(d){return "translate(" + (xRange(d.x)  - ((377 *(d.size/120)) / 2.0))  + "," + (yRange(d.score) -  ((431 *(d.size/120))))+"), scale ("+(d.size/120)+")";})
+			.style("fill", "white")
 			.style("opacity", 0.8)
+			.style("stroke", "orange")
+			.style("stroke-width", "10");
+
+
 
 		featureExtraInfo.expectedScore  = featureExtraInfo.group.append("text")
 			.attr("x", 0)
@@ -326,7 +337,6 @@ function D3GFX(options) {
 			.attr("font-family", "sans-serif")
 			.attr("font-size", "18px")
 			.attr("fill", "blue");
-
 
 
 		//Score Lines

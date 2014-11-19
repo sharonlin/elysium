@@ -23,19 +23,34 @@ elysiumApp.controller('WizardController', ['$scope','$timeout', "$location", "Ta
 	function _almLogin(){
 		ElysiumService.almLogin($scope.project, function(error){
 			if(!error){
+
+
+
+				ElysiumService.almSession($scope.project, function(error){
+						if(!error){
+							ElysiumService.syncPrediction($scope.project, function (error, predictionResults) {
+								if (!error) {
+									console.dir(predictionResults);
+								} else {
+									console.dir(error);
+								}
+							});
+						}
+				});
+
 //					ElysiumService.getFields($scope.project, function(fields){
 //						$timeout(function(){
 //							$scope.project.fields = fields;
 //						});
 //				});
 
-				ElysiumService.syncPrediction($scope.project, function(error, predictionResults){
-					if(!error) {
-						console.dir(predictionResults);
-					}else {
-						console.dir(error);
-					}
-				});
+//				ElysiumService.syncPrediction($scope.project, function(error, predictionResults){
+//					if(!error) {
+//						console.dir(predictionResults);
+//					}else {
+//						console.dir(error);
+//					}
+//				});
 			}
 		});
 	}
