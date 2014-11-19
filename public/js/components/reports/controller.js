@@ -35,7 +35,7 @@ elysiumApp.controller('ReportsController', ['$scope','$timeout','MessageBus' ,fu
 			"modules" :
 				[
 					{
-						"name": "Installation",
+						"name": "A",
 						"size": "56",
 						"x": "10",
 						"score": "0.56",
@@ -60,7 +60,40 @@ elysiumApp.controller('ReportsController', ['$scope','$timeout','MessageBus' ,fu
 						"currentStatus": "BAD",
 						"recommendation": "too much developers 3",
 						"afterImprovement": "0.45"
-					}
+					},
+					{
+					"name": "A",
+					"size": "24",
+					"x": "27",
+					"score": "0.24",
+					"currentStatus": "BAD",
+					"recommendation": "too much developers",
+					"afterImprovement": "0.76"
+				},{
+						"name": "d",
+						"size": "42",
+						"x": "58",
+						"score": "0.42",
+						"currentStatus": "BAD",
+						"recommendation": "too much developers",
+						"afterImprovement": "0.83"
+					},{
+					"name": "E",
+					"size": "33",
+					"x": "43",
+					"score": "0.33",
+					"currentStatus": "BAD",
+					"recommendation": "too much developers",
+					"afterImprovement": "0.65"
+				},{
+					"name": "F",
+					"size": "64",
+					"x": "65",
+					"score": "0.64",
+					"currentStatus": "BAD",
+					"recommendation": "too much developers",
+					"afterImprovement": "0.79"
+				},
 				]
 		};
 
