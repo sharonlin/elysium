@@ -33,7 +33,7 @@
     <file path="/message-bus.js" changelist="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" time="1415275971941" ignored="false" />
     <file path="/reports.html" changelist="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" time="1416395688985" ignored="false" />
     <file path="/count-up.js" changelist="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" time="1415879184276" ignored="false" />
-    <file path="/d3-gfx.js" changelist="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" time="1416390934988" ignored="false" />
+    <file path="/d3-gfx.js" changelist="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" time="1416396795145" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,10 +112,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="reports.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="reports.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/js/components/reports/reports.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="89" selection-start="638" selection-end="638" vertical-scroll-proportion="-6.5384617">
+            <state line="11" column="44" selection-start="682" selection-end="682" vertical-scroll-proportion="0.5013405">
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -143,10 +143,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="d3-gfx.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="d3-gfx.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/js/components/reports/d3-gfx.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="0" selection-start="1263" selection-end="1263" vertical-scroll-proportion="0.5521628">
+            <state line="187" column="13" selection-start="5066" selection-end="5066" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -209,11 +209,11 @@
         <option value="$PROJECT_DIR$/public/js/api/elysium-service.js" />
         <option value="$PROJECT_DIR$/public/js/components/wizard/controller.js" />
         <option value="$PROJECT_DIR$/api/elysium-service.js" />
-        <option value="$PROJECT_DIR$/public/js/components/reports/d3-gfx.js" />
         <option value="$PROJECT_DIR$/public/css/elysium.css" />
-        <option value="$PROJECT_DIR$/public/js/components/reports/reports.html" />
         <option value="$PROJECT_DIR$/public/js/components/reports/controller.js" />
         <option value="$PROJECT_DIR$/public/js/app.js" />
+        <option value="$PROJECT_DIR$/public/js/components/reports/d3-gfx.js" />
+        <option value="$PROJECT_DIR$/public/js/components/reports/reports.html" />
       </list>
     </option>
   </component>
@@ -654,8 +654,8 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26682988" sideWeight="0.556391" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.44360903" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27906978" sideWeight="0.5802005" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4197995" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2756892" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -829,17 +829,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/components/reports/reports.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="89" selection-start="638" selection-end="638" vertical-scroll-proportion="-6.5384617">
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/components/reports/controller.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="71" column="0" selection-start="2706" selection-end="2706" vertical-scroll-proportion="-8.296296">
@@ -856,8 +845,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/components/reports/d3-gfx.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="0" selection-start="1263" selection-end="1263" vertical-scroll-proportion="0.5521628">
+        <state line="187" column="13" selection-start="5066" selection-end="5066" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/components/reports/reports.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="44" selection-start="682" selection-end="682" vertical-scroll-proportion="0.5013405">
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

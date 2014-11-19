@@ -11,6 +11,8 @@ function D3GFX(options) {
 	var xRange, yRange;
 	var isScoreOver = false;
 	var _featureClickedListener;
+	var X_RANGE = 600;
+	var Y_RANGE = 400;
 	_addDropShadowFilter(options);
 	function _addDropShadowFilter(options) {
 		svg = d3.select(options.elSvg);
@@ -39,7 +41,7 @@ function D3GFX(options) {
 		xAxisGroup.append("line")
 			.attr("x1", 0)
 			.attr("y1", 0)
-			.attr("x2", 400)
+			.attr("x2", X_RANGE)
 			.attr("y2", 0)
 			.style('stroke', 'black')
 			.style('stroke-width', '1px');
@@ -52,7 +54,7 @@ function D3GFX(options) {
 		                 .attr("fill", "black");
 //
 		xAxisGroup.append("text")
-			.attr("x", 380)
+			.attr("x", X_RANGE - 20)
 			.attr("y", 30)
 			.text("High")
 			.attr("font-family", "sans-serif")
@@ -74,7 +76,7 @@ function D3GFX(options) {
 			.attr("x1", 0)
 			.attr("y1", 0)
 			.attr("x2", 0)
-			.attr("y2", 400)
+			.attr("y2", Y_RANGE)
 			.style('stroke', 'black')
 			.style('stroke-width', '1px');
 
@@ -88,7 +90,7 @@ function D3GFX(options) {
 
 		yAxisGroup.append("text")
 			.attr("x", -80)
-			.attr("y", 200)
+			.attr("y", Y_RANGE/2)
 			.text("Quality")
 			.attr("font-family", "sans-serif")
 			.attr("font-size", "20px")
@@ -111,18 +113,18 @@ function D3GFX(options) {
 
 		featureExtraInfo.expectedScore
 			.attr("x",0)
-			.attr("y",-1*(400 - yRange(30)) +5)
+			.attr("y",-1*(Y_RANGE - yRange(30)) +5)
 			.text(d.y + 30);
 
 		featureExtraInfo.expectedScoreCircle
 			.attr("cx",0)
-			.attr("cy",-1*(400 - yRange(30)))
+			.attr("cy",-1*(Y_RANGE - yRange(30)))
 			.attr("r", d.complexity);
 
 
 
 		featureExtraInfo.yLine
-			.attr("x1",0)
+			.attr("x1",-20)
 			.attr("y1",0)
 			.attr("x2",-xRange(d.x))
 			.attr("y2",0);
@@ -131,18 +133,18 @@ function D3GFX(options) {
 			.attr("x1",0)
 			.attr("y1",0)
 			.attr("x2",0)
-			.attr("y2",400-yRange(d.y));
+			.attr("y2",Y_RANGE-yRange(d.y));
 
 
 		featureExtraInfo.yLinePrediction
-			.attr("x1",0)
-			.attr("y1", -1*(400 - yRange(30)))
+			.attr("x1",-20)
+			.attr("y1", -1*(Y_RANGE - yRange(30)))
 			.attr("x2",-xRange(d.x))
-			.attr("y2",-1*(400 - yRange(30)));
+			.attr("y2",-1*(Y_RANGE - yRange(30)));
 
 		featureExtraInfo.xLinePrediction
 			.attr("x1",0)
-			.attr("y1",-1*(400 - yRange(30)))
+			.attr("y1",-1*(Y_RANGE - yRange(30)))
 			.attr("x2",0)
 			.attr("y2",0);
 
@@ -171,7 +173,7 @@ function D3GFX(options) {
 
 		var vis = d3.select("#riskChart");
 		var visGroup = vis.append('svg:g').attr("transform", "translate(80,40)");
-		xRange = d3.scale.linear().range([0, 400]).domain(   //80/440
+		xRange = d3.scale.linear().range([0, 600]).domain(   //80/440
 			[0,100]
 //			[d3.min(data, function (d) {
 //			return (d.x);
@@ -284,7 +286,8 @@ function D3GFX(options) {
 			.attr("y2", 0)
 			.style('stroke', 'black')
 			.style('stroke-width', '1px')
-			.style("stroke-dasharray", ("3, 6"));
+			.style("stroke-dasharray", ("3, 6"))
+			.style("stroke-opacity", 0.9);
 
 		featureExtraInfo.xLine = featureExtraInfo.group.append("line")
 			.attr("id", "xLine")
@@ -294,7 +297,8 @@ function D3GFX(options) {
 			.attr("y2", 0)
 			.style('stroke', 'black')
 			.style('stroke-width', '1px')
-			.style("stroke-dasharray", ("3, 6"));
+			.style("stroke-dasharray", ("3, 6"))
+			.style("stroke-opacity", 0.9);
 
 		//Prediction Lines
 		featureExtraInfo.yLinePrediction = featureExtraInfo.group.append("line")
@@ -305,7 +309,8 @@ function D3GFX(options) {
 			.attr("y2", 0)
 			.style('stroke', 'black')
 			.style('stroke-width', '1px')
-			.style("stroke-dasharray", ("3, 6"));
+			.style("stroke-dasharray", ("3, 6"))
+			.style("stroke-opacity", 0.9);
 
 		featureExtraInfo.xLinePrediction = featureExtraInfo.group.append("line")
 			.attr("id", "xLinePrediction")
@@ -315,7 +320,8 @@ function D3GFX(options) {
 			.attr("y2", 0)
 			.style('stroke', 'black')
 			.style('stroke-width', '1px')
-			.style("stroke-dasharray", ("3, 6"));
+			.style("stroke-dasharray", ("3, 6"))
+			.style("stroke-opacity", 0.9);
 		_addXAxis(visGroup);
 		_addYAxis(visGroup);
 	}
