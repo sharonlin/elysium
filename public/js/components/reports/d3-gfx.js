@@ -97,16 +97,29 @@ function D3GFX(options) {
 
 	function _onFeatureMouseOver(d){
 		console.log('_onFeatureMouseOver '+ d.moduleName);
+
+	//.style("stroke", "LightBlue")
+//			.style("stroke-width", "5")
 		featureExtraInfo.group.attr("transform", "translate(" + xRange(d.x) + "," + yRange(d.y) + ")");
 		featureExtraInfo.featureName = d.moduleName;
-
-		featureExtraInfo.currentScore.text(d.y);
-		var y = -1 * (d.y + 30);
-		featureExtraInfo.expectedScore
-//			.attr("transform", "translate(" + 0 + "," + y + ")")
+		featureExtraInfo.currentScore
 			.attr("x",0)
-			.attr("y",-1*(400 - yRange(30)))
+			.attr("y",+5)
+			.text(d.y);
+
+		var y = -1 * (d.y + 30);
+
+		featureExtraInfo.expectedScore
+			.attr("x",0)
+			.attr("y",-1*(400 - yRange(30)) +5)
 			.text(d.y + 30);
+
+		featureExtraInfo.expectedScoreCircle
+			.attr("cx",0)
+			.attr("cy",-1*(400 - yRange(30)))
+			.attr("r", d.complexity);
+
+
 
 		featureExtraInfo.yLine
 			.attr("x1",0)
@@ -234,20 +247,33 @@ function D3GFX(options) {
 			.attr("y", 0)
 			.text("0")
 			.attr("text-anchor", "middle")
-			.attr("font-family", "sans-serif")
+			.attr("font-family", "courier")
 			.attr("font-size", "18px")
-			.attr("fill", "red")
+			.attr("font-weight", "bold")
+			.attr("fill", "white")
 			.on('mouseover',_onScoreMouseOver)
 			.on('mouseout',_onScoreMouseOut);
 
+		featureExtraInfo.expectedScoreCircle  = featureExtraInfo.group.append("circle")
+			.attr("cx", 0)
+			.attr("cy", 0)
+			.attr("r", "0")
+			.attr("filter", "url(#drop-shadow)")
+			.style("stroke", "LightGreen")
+			.style("stroke-width", "8")
+			.style("fill", "Lavender")
+			.style("opacity", 0.8)
+
 		featureExtraInfo.expectedScore  = featureExtraInfo.group.append("text")
 			.attr("x", 0)
-			.attr("y", -40)
+			.attr("y", 0)
 			.text("0")
 			.attr("text-anchor", "middle")
 			.attr("font-family", "sans-serif")
 			.attr("font-size", "18px")
 			.attr("fill", "blue");
+
+
 
 		//Score Lines
 		featureExtraInfo.yLine = featureExtraInfo.group.append("line")
@@ -258,7 +284,7 @@ function D3GFX(options) {
 			.attr("y2", 0)
 			.style('stroke', 'black')
 			.style('stroke-width', '1px')
-			.style("stroke-dasharray", ("3, 3"));
+			.style("stroke-dasharray", ("3, 6"));
 
 		featureExtraInfo.xLine = featureExtraInfo.group.append("line")
 			.attr("id", "xLine")
@@ -268,7 +294,7 @@ function D3GFX(options) {
 			.attr("y2", 0)
 			.style('stroke', 'black')
 			.style('stroke-width', '1px')
-			.style("stroke-dasharray", ("3, 3"));
+			.style("stroke-dasharray", ("3, 6"));
 
 		//Prediction Lines
 		featureExtraInfo.yLinePrediction = featureExtraInfo.group.append("line")
@@ -279,7 +305,7 @@ function D3GFX(options) {
 			.attr("y2", 0)
 			.style('stroke', 'black')
 			.style('stroke-width', '1px')
-			.style("stroke-dasharray", ("3, 3"));
+			.style("stroke-dasharray", ("3, 6"));
 
 		featureExtraInfo.xLinePrediction = featureExtraInfo.group.append("line")
 			.attr("id", "xLinePrediction")
@@ -289,7 +315,7 @@ function D3GFX(options) {
 			.attr("y2", 0)
 			.style('stroke', 'black')
 			.style('stroke-width', '1px')
-			.style("stroke-dasharray", ("3, 3"));
+			.style("stroke-dasharray", ("3, 6"));
 		_addXAxis(visGroup);
 		_addYAxis(visGroup);
 	}

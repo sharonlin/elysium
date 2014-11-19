@@ -11,9 +11,11 @@ var elysiumApp = angular.module('elysiumApp', ['chieffancypants.loadingBar', 'ng
 elysiumApp.directive('toggle', function() {
 	return function(scope, elem, attrs) {
 		scope.$on('event:toggle', function() {
-			//elem.slideToggle();
 			elem.toggle("slide");
-			//elem.hide("slide");
+		});
+		scope.$on('event:show', function() {
+			elem.show("slide");
+
 		});
 	};
 });

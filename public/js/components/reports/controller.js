@@ -63,12 +63,13 @@ elysiumApp.controller('ReportsController', ['$scope','$timeout','MessageBus' ,fu
 	function InitChart(){
 		d3gfx = new D3GFX({elSvg:'#riskChart'});
 		d3gfx.setFeatureClickedListener(function(featureName){
-			console.log('Feature '+featureName+'Clicked');
+			console.log('Feature '+featureName+' Clicked');
 			//Find it in the array and set it as active
 			angular.forEach($scope.project.results, function(feature){
 				if(feature.moduleName === featureName) {
 					$timeout(function(){
 						$scope.selectedItem = feature;
+						$scope.$broadcast('event:show');
 					},0);
 					return true;
 				}
