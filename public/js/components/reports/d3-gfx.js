@@ -11,6 +11,8 @@ function D3GFX(options) {
 	var xRange, yRange;
 	var isScoreOver = false;
 	var _featureClickedListener;
+	var X_RANGE = 700;
+	var Y_RANGE = 300;
 	_addDropShadowFilter(options);
 	function _addDropShadowFilter(options) {
 		svg = d3.select(options.elSvg);
@@ -35,11 +37,11 @@ function D3GFX(options) {
 	}
 
 	function _addXAxis(visGroup){
-		var xAxisGroup = visGroup.append('svg:g').attr("transform", "translate(0,400)");
+		var xAxisGroup = visGroup.append('svg:g').attr("transform", "translate(0,"+Y_RANGE+")");
 		xAxisGroup.append("line")
 			.attr("x1", 0)
 			.attr("y1", 0)
-			.attr("x2", 400)
+			.attr("x2", X_RANGE)
 			.attr("y2", 0)
 			.style('stroke', 'black')
 			.style('stroke-width', '1px');
@@ -52,7 +54,7 @@ function D3GFX(options) {
 		                 .attr("fill", "black");
 //
 		xAxisGroup.append("text")
-			.attr("x", 380)
+			.attr("x", X_RANGE - 20)
 			.attr("y", 30)
 			.text("High")
 			.attr("font-family", "sans-serif")
@@ -60,11 +62,13 @@ function D3GFX(options) {
 			.attr("fill", "black");
 
 		xAxisGroup.append("text")
-			.attr("x", 120)
+			.attr("x", xRange(100/2))
 			.attr("y", 50)
-			.text("Feature Complexity")
+			.text("Actual Quality in Former Release")
+			.attr("text-anchor", "middle")
 			.attr("font-family", "sans-serif")
 			.attr("font-size", "20px")
+			.attr("font-wight", "bold")
 			.attr("fill", "black");
 	}
 
@@ -74,7 +78,7 @@ function D3GFX(options) {
 			.attr("x1", 0)
 			.attr("y1", 0)
 			.attr("x2", 0)
-			.attr("y2", 400)
+			.attr("y2", Y_RANGE)
 			.style('stroke', 'black')
 			.style('stroke-width', '1px');
 
@@ -88,7 +92,7 @@ function D3GFX(options) {
 
 		yAxisGroup.append("text")
 			.attr("x", -80)
-			.attr("y", 200)
+			.attr("y", Y_RANGE/2)
 			.text("Quality")
 			.attr("font-family", "sans-serif")
 			.attr("font-size", "20px")
@@ -97,19 +101,32 @@ function D3GFX(options) {
 
 	function _onFeatureMouseOver(d){
 		console.log('_onFeatureMouseOver '+ d.moduleName);
+
+	//.style("stroke", "LightBlue")
+//			.style("stroke-width", "5")
 		featureExtraInfo.group.attr("transform", "translate(" + xRange(d.x) + "," + yRange(d.y) + ")");
 		featureExtraInfo.featureName = d.moduleName;
-
-		featureExtraInfo.currentScore.text(d.y);
-		var y = -1 * (d.y + 30);
-		featureExtraInfo.expectedScore
-//			.attr("transform", "translate(" + 0 + "," + y + ")")
+		featureExtraInfo.currentScore
 			.attr("x",0)
-			.attr("y",-1*(400 - yRange(30)))
+			.attr("y",+5)
+			.text(d.y);
+
+		var y = -1 * (d.y + 30);
+
+		featureExtraInfo.expectedScore
+			.attr("x",0)
+			.attr("y",-1*(Y_RANGE - yRange(30)) +5)
 			.text(d.y + 30);
 
+		featureExtraInfo.expectedScoreCircle
+			.attr("cx",0)
+			.attr("cy",-1*(Y_RANGE - yRange(30)))
+			.attr("r", d.complexity);
+
+
+
 		featureExtraInfo.yLine
-			.attr("x1",0)
+			.attr("x1",-20)
 			.attr("y1",0)
 			.attr("x2",-xRange(d.x))
 			.attr("y2",0);
@@ -118,18 +135,18 @@ function D3GFX(options) {
 			.attr("x1",0)
 			.attr("y1",0)
 			.attr("x2",0)
-			.attr("y2",400-yRange(d.y));
+			.attr("y2",Y_RANGE-yRange(d.y));
 
 
 		featureExtraInfo.yLinePrediction
-			.attr("x1",0)
-			.attr("y1", -1*(400 - yRange(30)))
+			.attr("x1",-20)
+			.attr("y1", -1*(Y_RANGE - yRange(30)))
 			.attr("x2",-xRange(d.x))
-			.attr("y2",-1*(400 - yRange(30)));
+			.attr("y2",-1*(Y_RANGE - yRange(30)));
 
 		featureExtraInfo.xLinePrediction
 			.attr("x1",0)
-			.attr("y1",-1*(400 - yRange(30)))
+			.attr("y1",-1*(Y_RANGE - yRange(30)))
 			.attr("x2",0)
 			.attr("y2",0);
 
@@ -155,10 +172,9 @@ function D3GFX(options) {
 
 	function _renderGraph(data){
 		var colors = d3.scale.category10().range();
-
 		var vis = d3.select("#riskChart");
 		var visGroup = vis.append('svg:g').attr("transform", "translate(80,40)");
-		xRange = d3.scale.linear().range([0, 400]).domain(   //80/440
+		xRange = d3.scale.linear().range([0, X_RANGE]).domain(   //80/440
 			[0,100]
 //			[d3.min(data, function (d) {
 //			return (d.x);
@@ -167,7 +183,7 @@ function D3GFX(options) {
 //				return d.x;
 //			})]
 		);
-		yRange = d3.scale.linear().range([400, 0]).domain(   //440,80
+		yRange = d3.scale.linear().range([Y_RANGE, 0]).domain(   //440,80
 			[
 				0,100
 			]
@@ -184,6 +200,51 @@ function D3GFX(options) {
 //		var yAxis = d3.svg.axis().scale(yRange).orient("left");
 //		vis.append("svg:g").call(xAxis).attr("transform", "translate(0,400)");
 //		vis.append("svg:g").call(yAxis).attr("transform", "translate(40,0)");
+
+
+		//Quad Top Left
+		visGroup.append("rect")
+			.attr("x", 0)
+			.attr("y", yRange(100))
+			.attr("width", xRange (100/2))
+			.attr("height", yRange (100/2))
+			.style("stroke", "black")
+			.style("stroke-width", 1)
+			.style('stroke-opacity', 0.8)
+			.style("fill", "rgb(235, 241,223)");
+		//Quad Top Right
+		visGroup.append("rect")
+			.attr("x", xRange (100/2))
+			.attr("y", yRange(100))
+			.attr("width", xRange (100/2))
+			.attr("height", yRange (100/2))
+			.style("stroke", "black")
+			.style("stroke-width", 1)
+			.style('stroke-opacity', 0.8)
+			.style("fill", "white");
+
+		//Quad Bottom Left
+		visGroup.append("rect")
+			.attr("x", 0)
+			.attr("y", yRange(100/2))
+			.attr("width", xRange (100/2))
+			.attr("height", yRange (100/2))
+			.style("stroke", "black")
+			.style("stroke-width", 1)
+			.style('stroke-opacity', 0.8)
+			.style("fill", "white");
+
+		//Quad Bottom Left
+		visGroup.append("rect")
+			.attr("x", xRange(100/2))
+			.attr("y", yRange(100/2))
+			.attr("width", xRange (100/2))
+			.attr("height", yRange (100/2))
+			.style("stroke", "black")
+			.style("stroke-width", 1)
+			.style('stroke-opacity', 0.8)
+			.style("fill", "rgb(242,220,218)");
+
 
 		var circles = visGroup.selectAll("circle").data(data);
 		circles.enter()
@@ -234,20 +295,33 @@ function D3GFX(options) {
 			.attr("y", 0)
 			.text("0")
 			.attr("text-anchor", "middle")
-			.attr("font-family", "sans-serif")
+			.attr("font-family", "courier")
 			.attr("font-size", "18px")
-			.attr("fill", "red")
+			.attr("font-weight", "bold")
+			.attr("fill", "white")
 			.on('mouseover',_onScoreMouseOver)
 			.on('mouseout',_onScoreMouseOut);
 
+		featureExtraInfo.expectedScoreCircle  = featureExtraInfo.group.append("circle")
+			.attr("cx", 0)
+			.attr("cy", 0)
+			.attr("r", "0")
+			.attr("filter", "url(#drop-shadow)")
+			.style("stroke", "LightGreen")
+			.style("stroke-width", "8")
+			.style("fill", "Lavender")
+			.style("opacity", 0.8)
+
 		featureExtraInfo.expectedScore  = featureExtraInfo.group.append("text")
 			.attr("x", 0)
-			.attr("y", -40)
+			.attr("y", 0)
 			.text("0")
 			.attr("text-anchor", "middle")
 			.attr("font-family", "sans-serif")
 			.attr("font-size", "18px")
 			.attr("fill", "blue");
+
+
 
 		//Score Lines
 		featureExtraInfo.yLine = featureExtraInfo.group.append("line")
@@ -258,7 +332,8 @@ function D3GFX(options) {
 			.attr("y2", 0)
 			.style('stroke', 'black')
 			.style('stroke-width', '1px')
-			.style("stroke-dasharray", ("3, 3"));
+			.style("stroke-dasharray", ("3, 6"))
+			.style("stroke-opacity", 0.9);
 
 		featureExtraInfo.xLine = featureExtraInfo.group.append("line")
 			.attr("id", "xLine")
@@ -268,7 +343,8 @@ function D3GFX(options) {
 			.attr("y2", 0)
 			.style('stroke', 'black')
 			.style('stroke-width', '1px')
-			.style("stroke-dasharray", ("3, 3"));
+			.style("stroke-dasharray", ("3, 6"))
+			.style("stroke-opacity", 0.9);
 
 		//Prediction Lines
 		featureExtraInfo.yLinePrediction = featureExtraInfo.group.append("line")
@@ -279,7 +355,8 @@ function D3GFX(options) {
 			.attr("y2", 0)
 			.style('stroke', 'black')
 			.style('stroke-width', '1px')
-			.style("stroke-dasharray", ("3, 3"));
+			.style("stroke-dasharray", ("3, 6"))
+			.style("stroke-opacity", 0.9);
 
 		featureExtraInfo.xLinePrediction = featureExtraInfo.group.append("line")
 			.attr("id", "xLinePrediction")
@@ -289,7 +366,8 @@ function D3GFX(options) {
 			.attr("y2", 0)
 			.style('stroke', 'black')
 			.style('stroke-width', '1px')
-			.style("stroke-dasharray", ("3, 3"));
+			.style("stroke-dasharray", ("3, 6"))
+			.style("stroke-opacity", 0.9);
 		_addXAxis(visGroup);
 		_addYAxis(visGroup);
 	}

@@ -374,6 +374,6 @@ ul.nav-wizard.nav-wizard-backnav .active ~ li a:focus {
     padding: 13px !important;
 }
 
-.disabledTab {
+.disabledTab .disabledTab {
     pointer-events: none;
 }
