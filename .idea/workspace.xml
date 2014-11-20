@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/download.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/directives/modal.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/components/dashboard/controller.js" afterPath="$PROJECT_DIR$/public/js/components/dashboard/controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/components/dashboard/dashboard.html" afterPath="$PROJECT_DIR$/public/js/components/dashboard/dashboard.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/index.html" afterPath="$PROJECT_DIR$/public/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/components/tabs/tabs-controller.js" afterPath="$PROJECT_DIR$/public/js/components/tabs/tabs-controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/components/reports/controller.js" afterPath="$PROJECT_DIR$/public/js/components/reports/controller.js" />
     </list>
     <ignored path="elysium.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -43,6 +37,7 @@
     <file path="/count-up.js" changelist="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" time="1415879184276" ignored="false" />
     <file path="/d3-gfx.js" changelist="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" time="1416469219103" ignored="false" />
     <file path="/modal.js" changelist="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" time="1416483600123" ignored="false" />
+    <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" time="1416494015473" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,10 +98,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="controller.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="controller.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/js/components/reports/controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="148" column="61" selection-start="4455" selection-end="4455" vertical-scroll-proportion="-5.185185">
+            <state line="114" column="35" selection-start="3632" selection-end="3632" vertical-scroll-proportion="0.6478343">
               <folding />
             </state>
           </provider>
@@ -183,10 +178,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="controller.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="controller.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/js/components/dashboard/controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="55" selection-start="1428" selection-end="1428" vertical-scroll-proportion="0.5944954">
+            <state line="35" column="44" selection-start="1245" selection-end="1245" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -235,7 +230,6 @@
         <option value="$PROJECT_DIR$/public/js/api/elysium-service.js" />
         <option value="$PROJECT_DIR$/public/js/components/wizard/controller.js" />
         <option value="$PROJECT_DIR$/api/elysium-service.js" />
-        <option value="$PROJECT_DIR$/public/js/components/reports/controller.js" />
         <option value="$PROJECT_DIR$/public/js/components/reports/d3-gfx.js" />
         <option value="$PROJECT_DIR$/public/js/components/reports/reports.html" />
         <option value="$PROJECT_DIR$/public/index.html" />
@@ -244,6 +238,7 @@
         <option value="$PROJECT_DIR$/public/js/directives/modal.js" />
         <option value="$PROJECT_DIR$/public/css/elysium.css" />
         <option value="$PROJECT_DIR$/public/js/components/dashboard/controller.js" />
+        <option value="$PROJECT_DIR$/public/js/components/reports/controller.js" />
       </list>
     </option>
   </component>
@@ -976,13 +971,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/components/reports/controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="148" column="61" selection-start="4455" selection-end="4455" vertical-scroll-proportion="-5.185185">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/components/tabs/tabs-controller.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="11" selection-start="400" selection-end="400" vertical-scroll-proportion="0.0">
@@ -992,7 +980,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/components/dashboard/controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="55" selection-start="1428" selection-end="1428" vertical-scroll-proportion="0.5944954">
+        <state line="35" column="44" selection-start="1245" selection-end="1245" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/components/reports/controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="114" column="35" selection-start="3632" selection-end="3632" vertical-scroll-proportion="0.6478343">
           <folding />
         </state>
       </provider>

@@ -50,9 +50,9 @@ elysiumApp.controller('ReportsController', ['$scope','$timeout','MessageBus' ,fu
 				[
 					{
 						"name": "A",
-						"size": "56",
-						"x": "20",
-						"score": "0.56",
+						"size": "36",
+						"x": "10",
+						"score": "0.36",
 						"currentStatus": "BAD",
 						"recommendation": "too much developers",
 						"afterImprovement": "0.76"
@@ -60,9 +60,9 @@ elysiumApp.controller('ReportsController', ['$scope','$timeout','MessageBus' ,fu
 					,
 					{
 						"name": "B",
-						"size": "40",
-						"x": "50",
-						"score": "0.67",
+						"size": "28",
+						"x": "52",
+						"score": "0.60",
 						"currentStatus": "BAD",
 						"recommendation": "too much developers 2",
 						"afterImprovement": "0.87"
@@ -70,23 +70,23 @@ elysiumApp.controller('ReportsController', ['$scope','$timeout','MessageBus' ,fu
 					,
 					{
 						"name": "C",
-						"size": "25",
+						"size": "30",
 						"x": "80",
-						"score": "0.25",
+						"score": "0.18",
 						"currentStatus": "BAD",
 						"recommendation": "too much developers 3",
 						"afterImprovement": "0.45"
 					},
 					{
 					"name": "T",
-					"size": "36",
+					"size": "32",
 					"x": "27",
 					"score": "0.24",
 					"currentStatus": "BAD",
 					"recommendation": "too much developers",
 					"afterImprovement": "0.76"
 				},{
-						"name": "d",
+						"name": "D",
 						"size": "24",
 						"x": "58",
 						"score": "0.42",
@@ -95,7 +95,7 @@ elysiumApp.controller('ReportsController', ['$scope','$timeout','MessageBus' ,fu
 						"afterImprovement": "0.83"
 					},{
 					"name": "E",
-					"size": "15",
+					"size": "25",
 					"x": "43",
 					"score": "0.33",
 					"currentStatus": "BAD",
@@ -103,8 +103,8 @@ elysiumApp.controller('ReportsController', ['$scope','$timeout','MessageBus' ,fu
 					"afterImprovement": "0.65"
 				},{
 					"name": "F",
-					"size": "14",
-					"x": "65",
+					"size": "29",
+					"x": "75",
 					"score": "0.64",
 					"currentStatus": "BAD",
 					"recommendation": "too much developers",
@@ -112,7 +112,7 @@ elysiumApp.controller('ReportsController', ['$scope','$timeout','MessageBus' ,fu
 				},
 					{
 						"name": "R",
-						"size": "16",
+						"size": "29",
 						"x": "86",
 						"score": "0.45",
 						"currentStatus": "BAD",
