@@ -7,7 +7,7 @@
  */
 elysiumApp.controller('TabsController', function ($scope, MessageBus,$location){
 	$scope.init = function (){
-		$scope.tab = "wizard";
+		$scope.tab = "dashboard";
 
 		MessageBus.onMsg('tab.dashboard', $scope, function(data) {
             $location.path('dashboard');

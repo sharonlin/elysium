@@ -6,6 +6,18 @@
  * To change this template use File | Settings | File Templates.
  */
 elysiumApp.controller('DashboardController', ['$scope', '$interval', '$timeout', 'MessageBus', 'TabsService', 'cfpLoadingBar', 'ElysiumService', 'DashboardService', function ($scope, $interval, $timeout, MessageBus, TabsService, cfpLoadingBar, ElysiumService, DashboardService) {
+
+	$scope.showModal = false;
+	$scope.showLoadingData = function(){
+			$scope.$broadcast('showLoadingData');
+	};
+	$scope.hideLoadingData = function(){
+		$scope.$broadcast('hideLoadingData');
+	};
+	$scope.progressMessage = function (message){
+		$scope.$broadcast('progressMessage', message);
+	}
+
 	$scope.init = function () {
 		$scope.projects = DashboardService.getAllProjects();
 //			[
@@ -26,7 +38,28 @@ elysiumApp.controller('DashboardController', ['$scope', '$interval', '$timeout',
 	}
 
 	$scope.runPredict = function (project) {
-					TabsService.switchToReport(project);
+		$scope.showLoadingData();
+		$timeout(function(){
+			$scope.progressMessage('Processing Data ...');
+			$timeout(function(){
+				$scope.progressMessage('Calculating Quality Scores ...');
+
+				$timeout(function(){
+
+					$scope.progressMessage('Processing Recommendations ...');
+					$timeout(function(){
+						$scope.progressMessage('');
+						TabsService.switchToReport(project);
+						$scope.hideLoadingData();
+					},3000);
+				}, 3000);
+			}, 3000);
+		}, 0);
+
+
+
+
+
 					//project.results = predictionResults;
 
 //		ElysiumService.almLogin(project, function(error){
