@@ -12,6 +12,20 @@ elysiumApp.controller('ReportsController', ['$scope','$timeout','MessageBus' ,fu
 		$scope.$broadcast('event:toggle');
 	}
 	$scope.init = function() {
+
+//				MessageBus.onMsg('tab.report', $scope, function (event, results) {
+//								$timeout(function () {
+//									results.modules = results.modules.map(function(module){
+//										module.score= Math.floor(module.score * 100);
+//										module.afterImprovement= Math.floor(module.afterImprovement * 100);
+//										module.size= Math.floor(module.size * 0.5);
+//										return module;
+//									});
+//									$scope.project = {results:results.modules};
+//									$scope.selectedItem = $scope.project.results[0];
+//								});
+//				});
+
 //		MessageBus.onMsg('tab.report', $scope, function (event, project) {
 //			$timeout(function () {
 //				$scope.project = project;
@@ -36,13 +50,14 @@ elysiumApp.controller('ReportsController', ['$scope','$timeout','MessageBus' ,fu
 				[
 					{
 						"name": "A",
-						"size": "20",
-						"x": "10",
+						"size": "56",
+						"x": "20",
 						"score": "0.56",
 						"currentStatus": "BAD",
 						"recommendation": "too much developers",
 						"afterImprovement": "0.76"
-					},
+					}
+					,
 					{
 						"name": "B",
 						"size": "40",
@@ -51,7 +66,8 @@ elysiumApp.controller('ReportsController', ['$scope','$timeout','MessageBus' ,fu
 						"currentStatus": "BAD",
 						"recommendation": "too much developers 2",
 						"afterImprovement": "0.87"
-					},
+					}
+					,
 					{
 						"name": "C",
 						"size": "25",
@@ -63,7 +79,7 @@ elysiumApp.controller('ReportsController', ['$scope','$timeout','MessageBus' ,fu
 					},
 					{
 					"name": "T",
-					"size": "24",
+					"size": "36",
 					"x": "27",
 					"score": "0.24",
 					"currentStatus": "BAD",
@@ -94,6 +110,15 @@ elysiumApp.controller('ReportsController', ['$scope','$timeout','MessageBus' ,fu
 					"recommendation": "too much developers",
 					"afterImprovement": "0.79"
 				},
+					{
+						"name": "R",
+						"size": "16",
+						"x": "86",
+						"score": "0.45",
+						"currentStatus": "BAD",
+						"recommendation": "too much developers",
+						"afterImprovement": "0.86"
+					}
 				]
 		};
 
@@ -107,7 +132,7 @@ elysiumApp.controller('ReportsController', ['$scope','$timeout','MessageBus' ,fu
 		console.dir(mockData);
 		$scope.project = {results:mockData.modules}
 		$scope.selectedItem = $scope.project.results[0];
-				InitChart();
+	InitChart();
 
 //			});
 //		});
@@ -118,6 +143,7 @@ elysiumApp.controller('ReportsController', ['$scope','$timeout','MessageBus' ,fu
 	$scope.selectItem = function(item) {
 		$scope.selectedItem = item;
 	}
+
 	function InitChart(){
 		d3gfx = new D3GFX({elSvg:'#riskChart'});
 		d3gfx.setFeatureClickedListener(function(featureName){

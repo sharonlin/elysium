@@ -4,7 +4,15 @@
     <a ng-click="toggle()" style="cursor:pointer;">Recommendations</a>
     <div class="row">
         <div class="col-md-6" style="padding-top:50px;padding-left:10px;height:500px; border: 1px black solid">
-        <svg id="riskChart" width="800" height="500"></svg>
+        <svg id="riskChart" width="800" height="500">
+            <defs>
+                <pattern id="grid"
+                         x="10" y="10" width="20" height="20"
+                         patternUnits="userSpaceOnUse" >
+                    <circle cx="10" cy="10" r="1" style="stroke: none; fill: 'red'; opacity:0.2;" />
+                </pattern>
+            </defs>
+        </svg>
         </div>
 
         <div class="col-md-6" style="height:500px; border-right: 1px black solid;border-top: 1px black solid;border-bottom: 1px black solid;display: none;" toggle>

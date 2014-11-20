@@ -27,7 +27,32 @@ elysiumApp.controller('DashboardController', ['$scope', '$interval', '$timeout',
 
 	$scope.runPredict = function (project) {
 					TabsService.switchToReport(project);
-//					project.results = predictionResults;
+					//project.results = predictionResults;
+
+//		ElysiumService.almLogin(project, function(error){
+//			if(!error){
+//				ElysiumService.almSession(project, function(error){
+//					if(!error){
+//						ElysiumService.syncPrediction(project, function (error, predictionResults) {
+//							if (!error) {
+//								console.dir(predictionResults);
+//								$timeout(function(){
+//									project.results = predictionResults;
+//								});
+//								TabsService.switchToReport(predictionResults);
+//
+//							} else {
+//								console.dir(error);
+//							}
+//						});
+//					}
+//				});
+//
+//			}
+//		});
+
+
+
 //		ElysiumService.syncPrediction(project, function(error, predictionResults) {
 //			cfpLoadingBar.start();
 //			if (!error) {

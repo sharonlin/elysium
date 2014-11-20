@@ -151,25 +151,17 @@ function D3GFX(options) {
 			.attr("x1",0)
 			.attr("y1",-1*(Y_RANGE - yRange(scoreGap)))
 			.attr("x2",0)
-			.attr("y2",0);
+			.attr("y2", -1 * (DROP_HEIGHT * (d.size / 120)) );
 
-		featureExtraInfo.group.style("opacity", 1);
+		featureExtraInfo.group.transition()
+			.duration(400)
+			.style("opacity", 1);
+//			.ease("elastic");
 	}
 
 	function _onFeatureMouseOut(d) {
 		console.log('_onFeatureMouseOut '+ d.module + ' ,isScoreOver '+isScoreOver );
-//		setTimeout(function(){
-//			if(isScoreOver === false) {
 				featureExtraInfo.group.style("opacity", 0);
-//			}
-//		},500);
-	}
-
-	function _onScoreMouseOver() {
-		isScoreOver = true;
-	}
-	function _onScoreMouseOut() {
-		isScoreOver = false;
 	}
 
 
@@ -216,6 +208,13 @@ function D3GFX(options) {
 			.style('stroke-opacity', 0.8)
 			.style("fill", "rgb(248, 252,248)");
 
+		visGroup.append("rect")
+			.attr("x", 0)
+			.attr("y", yRange(100))
+			.attr("width", xRange (100/2))
+			.attr("height", yRange (100/2))
+			.style('opacity', 0.5)
+			.style("fill", "url(#grid)")
 
 		visGroup.append("text")
 			.attr("x", 10)
@@ -228,6 +227,7 @@ function D3GFX(options) {
 			.style('opacity', 0.5);
 
 
+
 		//Quad Top Right
 		visGroup.append("rect")
 			.attr("x", xRange (100/2))
@@ -238,6 +238,14 @@ function D3GFX(options) {
 			.style("stroke-width", "4")
 			.style('stroke-opacity', 0.8)
 			.style("fill", "rgb(239, 248,240)");
+
+		visGroup.append("rect")
+			.attr("x", xRange (100/2))
+			.attr("y", yRange(100))
+			.attr("width", xRange (100/2))
+			.attr("height", yRange (100/2))
+			.style('opacity', 0.5)
+			.style("fill", "url(#grid)");
 
 
 		visGroup.append("text")
@@ -261,6 +269,13 @@ function D3GFX(options) {
 			.style('stroke-opacity', 0.8)
 			.style("fill", "rgb(255,249,250)");
 
+		visGroup.append("rect")
+			.attr("x", 0)
+			.attr("y", yRange(100/2))
+			.attr("width", xRange (100/2))
+			.attr("height", yRange (100/2))
+			.style('opacity', 0.5)
+			.style("fill", "url(#grid)");
 
 		visGroup.append("text")
 			.attr("x", 10)
@@ -283,6 +298,14 @@ function D3GFX(options) {
 			.style('stroke-opacity', 0.8)
 			.style("fill", "rgb(255,241,243)");
 
+		visGroup.append("rect")
+			.attr("x", xRange(100/2))
+			.attr("y", yRange(100/2))
+			.attr("width", xRange (100/2))
+			.attr("height", yRange (100/2))
+			.style('opacity', 0.5)
+			.style("fill", "url(#grid)");
+
 		visGroup.append("text")
 			.attr("x", xRange(100) - 10)
 			.attr("y",  yRange(0) - 20)
@@ -292,6 +315,7 @@ function D3GFX(options) {
 			.attr("font-size", "14px")
 			.attr("fill", "grey")
 			.style('opacity', 0.5);
+
 
 
 		var drops = visGroup.selectAll("path").data(data);
@@ -332,12 +356,13 @@ function D3GFX(options) {
 //			.ease("elastic");
 
 
-		var labels = visGroup.selectAll("text").data(data);
+		var labels = visGroup.selectAll(".featureLabel").data(data);
 		labels.enter()
 			.insert("text")
+			.attr("class", "featureLabel")
 			.attr("x", function (d) { return xRange (d.x); })
 			.attr("y", function (d) { return yRange (d.score) + 20; })
-			.text(function(d){return d.name;})
+			.text(function(d){return "Feature "+d.name;})
 			.attr("font-family", "sans-serif")
 			.attr("text-anchor", "middle")
 			.attr("font-size", "18px")
