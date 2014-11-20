@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/components/dashboard/controller.js" afterPath="$PROJECT_DIR$/public/js/components/dashboard/controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/components/reports/controller.js" afterPath="$PROJECT_DIR$/public/js/components/reports/controller.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/components/reports/d3-gfx.js" afterPath="$PROJECT_DIR$/public/js/components/reports/d3-gfx.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/components/reports/reports.html" afterPath="$PROJECT_DIR$/public/js/components/reports/reports.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="elysium.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,10 +35,9 @@
     <file path="$PROJECT_DIR$/../hub-application/webapp/src/main/webapp/resources/js/components/live-pipelines/live-pipelines-controller.js" changelist="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" time="1414938548900" ignored="false" />
     <file path="$PROJECT_DIR$/../hub-application/webapp/src/main/webapp/resources/js/components/live-pipelines/live-pipelines-template.html" changelist="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" time="1415013933271" ignored="false" />
     <file path="/message-bus.js" changelist="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" time="1415275971941" ignored="false" />
-    <file path="/reports.html" changelist="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" time="1416419632755" ignored="false" />
+    <file path="/reports.html" changelist="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" time="1416473174809" ignored="false" />
     <file path="/count-up.js" changelist="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" time="1415879184276" ignored="false" />
     <file path="/d3-gfx.js" changelist="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" time="1416469219103" ignored="false" />
-    <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="e19f0d9a-e9ed-44e9-a319-1dc6669f99aa" time="1416471482817" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,13 +107,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="reports.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="reports.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/js/components/reports/reports.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="26" selection-start="674" selection-end="674" vertical-scroll-proportion="-7.8461537">
+            <state line="10" column="61" selection-start="567" selection-end="567" vertical-scroll-proportion="0.31365314">
               <folding>
                 <element signature="n#style#0;n#a#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#svg#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#circle#0;n#pattern#0;n#defs#0;n#svg#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -137,10 +136,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="d3-gfx.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="d3-gfx.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/js/components/reports/d3-gfx.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="215" column="33" selection-start="6304" selection-end="6304" vertical-scroll-proportion="0.21996303">
+            <state line="50" column="38" selection-start="1826" selection-end="1826" vertical-scroll-proportion="-8.814815">
               <folding />
             </state>
           </provider>
@@ -230,10 +229,10 @@
         <option value="$PROJECT_DIR$/public/js/components/wizard/controller.js" />
         <option value="$PROJECT_DIR$/api/elysium-service.js" />
         <option value="$PROJECT_DIR$/public/index.html" />
-        <option value="$PROJECT_DIR$/public/js/components/reports/reports.html" />
         <option value="$PROJECT_DIR$/public/js/components/dashboard/controller.js" />
         <option value="$PROJECT_DIR$/public/js/components/reports/controller.js" />
         <option value="$PROJECT_DIR$/public/js/components/reports/d3-gfx.js" />
+        <option value="$PROJECT_DIR$/public/js/components/reports/reports.html" />
       </list>
     </option>
   </component>
@@ -864,23 +863,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/components/reports/reports.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="26" selection-start="674" selection-end="674" vertical-scroll-proportion="-7.8461537">
-          <folding>
-            <element signature="n#style#0;n#a#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#circle#0;n#pattern#0;n#defs#0;n#svg#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#a#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/components/wizard/controller.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="54" column="11" selection-start="821" selection-end="1594" vertical-scroll-proportion="0.0">
@@ -918,8 +900,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/components/reports/d3-gfx.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="215" column="33" selection-start="6304" selection-end="6304" vertical-scroll-proportion="0.21996303">
+        <state line="50" column="38" selection-start="1826" selection-end="1826" vertical-scroll-proportion="-8.814815">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/components/reports/reports.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="61" selection-start="567" selection-end="567" vertical-scroll-proportion="0.31365314">
+          <folding>
+            <element signature="n#style#0;n#a#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#svg#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#circle#0;n#pattern#0;n#defs#0;n#svg#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#a#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

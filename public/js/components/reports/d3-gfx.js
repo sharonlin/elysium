@@ -23,12 +23,12 @@ function D3GFX(options) {
 		// create filter with id #drop-shadow
 		// height=130% so that the shadow is not clipped
 		// var filter = defs.append('filter').attr('id', 'drop-shadow').attr('height', '130%');
-		filter = defs.append('filter').attr('id', 'drop-shadow').attr('height', '200%').attr('width', '200%').attr('x', '-40%').attr('y', '-40%');
+		filter = defs.append('filter').attr('id', 'drop-shadow').attr('height', '200%').attr('width', '200%').attr('x', '-80%').attr('y', '-100%');
 		filter.append('feGaussianBlur').attr('in', 'SourceAlpha').attr('stdDeviation', 5).attr('result', 'blur');
 
 		// translate output of Gaussian blur to the right and downwards with 2px
 		// store result in offsetBlur
-		filter.append('feOffset').attr('in', 'blur').attr('dx', 2).attr('dy', 3).attr('result', 'offsetBlur');
+		filter.append('feOffset').attr('in', 'blur').attr('dx', 4).attr('dy', 6).attr('result', 'offsetBlur');
 
 		// overlay original SourceGraphic over translated blurred opacity by using
 		// feMerge filter. Order of specifying inputs is important!
