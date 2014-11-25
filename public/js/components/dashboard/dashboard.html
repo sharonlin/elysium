@@ -3,23 +3,24 @@
     <p>Creator:{{project.creator}}</p>
     <p>Creation Date: {{project.creationDate | date:'dd.MM.yyyy HH:mm'}}</p>
     <p>Last Running: {{project.lastRunning | date:'dd.MM.yyyy HH:mm'}}</p>
-    <p>ModelID: {{project.modelId}}</p>
-    <div class="projectBoxFooter">
-        <button type="button" class="btn btn-default btn-md" ng-click='runPredict(project);'>
-            <span class="glyphicon glyphicon-play"></span> Predict
-        </button>
+    <div class="row">
+        <div >
+            <button type="button" class="btn btn-default btn-md center-block" ng-click='runPredict(project);' style="margin-top:20px">
+                <span class="glyphicon glyphicon-play"></span> Start Prediction
+            </button>
         <!--<button type="button" class="btn btn-default btn-md" ng-click='runTrain(project);'>-->
             <!--<span class="glyphicon glyphicon-play"></span> Train-->
         <!--</button>-->
-        <button type="button" class="btn btn-default btn-md" ng-click='openReport(project);'>
-            <span class="glyphicon glyphicon-signal"></span> Report
-        </button>
+        <!--<button type="button" class="btn btn-default btn-md" ng-click='openReport(project);'>-->
+            <!--<span class="glyphicon glyphicon-signal"></span> Report-->
+        <!--</button>-->
+        </div>
     </div>
 </div>
 
 <div ng-controller="DashboardController" class="container" style="margin: 0 auto;!important">
     <modal title="Processing Prediction Data" visible="showModal">
-        <img src="/img/download.gif" ></img>
+        <img src="/img/download.gif" width="100px" height="100px">
         <span style="padding-left: 50px;font-size: 24px">Loading data....</span>
     </modal>
 </div>

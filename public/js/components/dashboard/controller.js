@@ -56,24 +56,25 @@ elysiumApp.controller('DashboardController', ['$scope', '$interval', '$timeout',
 			}, 3000);
 		}, 0);
 
-
-
-
-
 					//project.results = predictionResults;
 
 //		ElysiumService.almLogin(project, function(error){
+//			$scope.showLoadingData();
 //			if(!error){
+//				$scope.progressMessage('Processing Data ...');
 //				ElysiumService.almSession(project, function(error){
 //					if(!error){
+//						$scope.progressMessage('Calculating Quality Scores ...');
 //						ElysiumService.syncPrediction(project, function (error, predictionResults) {
 //							if (!error) {
+//								$scope.progressMessage('Processing Recommendations ...');
 //								console.dir(predictionResults);
 //								$timeout(function(){
 //									project.results = predictionResults;
 //								});
+//								$scope.progressMessage('');
+//								$scope.hideLoadingData();
 //								TabsService.switchToReport(predictionResults);
-//
 //							} else {
 //								console.dir(error);
 //							}
@@ -83,20 +84,7 @@ elysiumApp.controller('DashboardController', ['$scope', '$interval', '$timeout',
 //
 //			}
 //		});
-
-
-
-//		ElysiumService.syncPrediction(project, function(error, predictionResults) {
-//			cfpLoadingBar.start();
-//			if (!error) {
-//				if (predictionResults) {
-//					TabsService.switchToReport(project);
-//					console.dir(predictionResults);
-//					project.results = predictionResults;
-//					cfpLoadingBar.complete();
-//				}
-//			}
-//		});
+//
 	}
 //	$scope.runPredict = function (project) {
 //		ElysiumService.startPrediction(project.modelId, '1/1/2014', function (error, predictionId) {

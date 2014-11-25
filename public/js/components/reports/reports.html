@@ -1,11 +1,15 @@
 <div>
-    <!--<h1>Reports Page</h1>-->
-    <!--<input type="button" ng-click="toggle()" value="Recommendation">-->
-    <a ng-click="toggle()" style="cursor:pointer;">Recommendations</a>
     <div class="row">
-        <div class="col-md-6" style="padding-left:10px;">
+        <div class="col-md-6" style="border: 1px black solid;">
+            <span class="header">Top 10 Risky Features in Release A</span><br>
+            <span class="sub-header">Prediction to:Code Freeze November 20,2014</span><br><br>
+            <a ng-click="toggle()" style="cursor:pointer;"><span ng-hide="isRecommendationVisible">View Recommendations</span><span ng-show="isRecommendationVisible">Hide Recommendations</span></a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6" style="padding-left:10px;border: 1px black solid;">
         <!--<div style="height:100px; border: 1px black solid; background: lightblue"></div>-->
-        <svg id="riskChart" width="100%" height="500" style="; border: 1px black solid;">
+        <svg id="riskChart" width="100%" height="500" >
             <defs>
                 <pattern id="grid"
                          x="10" y="10" width="20" height="20"
@@ -20,10 +24,10 @@
             <div class="row">
                 <div class="col-md-4" style="height:500px; background:white; padding: 0">
                     <div class="list-group">
-                          <a ng-repeat="result in project.results | orderBy:'score':true" href="#" class="list-group-item"  ng-class="{active: result === selectedItem}" ng-click="selectItem(result)" style="font-family:'HP Simplified';font-size:140%;font-weight: bold;text-decoration: none;padding-top:18px;padding-bottom:18px;">
+                          <a ng-repeat="result in project.results | orderBy:'predictedQuality':true" href="#" class="list-group-item"  ng-class="{active: result === selectedItem}" ng-click="selectItem(result)" style="font-family:'HP Simplified';font-size:140%;font-weight: bold;text-decoration: none;padding-top:18px;padding-bottom:18px;">
                                Feature {{result.name}}
                             <div style="padding-right:40px;color: red;font-weight: bold;float: right;font-family:'HP Simplified';font-size:110%;">
-                                <count-up count-to="result.score" interval="((result.score/20)*1000) / result.score" ></count-up>
+                                <count-up count-to="result.predictedQuality" interval="((result.predictedQuality/20)*1000) / result.predictedQuality" ></count-up>
                             </div>
                             <!--<svg width="100" height="25">&ndash;&gt;-->
                                 <!--<g>-->
@@ -50,7 +54,7 @@
                                 </div>
 
                                 <div class="col-md-4 column">
-                                    <span class="number" ng-class="{'number-negative': (selectedItem.score)<=70,'number-positive': (selectedItem.score >70)}"> {{selectedItem.score}}</span>
+                                    <span class="number" ng-class="{'number-negative': (selectedItem.predictedQuality)<=70,'number-positive': (selectedItem.predictedQuality >70)}"> {{selectedItem.predictedQuality}}</span>
                                 </div>
                             </div>
 
@@ -61,7 +65,7 @@
                                     <br>If recommendation adopted
                                 </div>
                                 <div class="col-md-4 column">
-                                     <span class="number" ng-class="{'number-negative': (selectedItem.afterImprovement)<=70,'number-positive': (selectedItem.afterImprovement) >70}"> {{selectedItem.afterImprovement}}</span>
+                                     <span class="number" ng-class="{'number-negative': (selectedItem.predictedQualityAfterRecommendations)<=70,'number-positive': (selectedItem.predictedQualityAfterRecommendations) >70}"> {{selectedItem.predictedQualityAfterRecommendations}}</span>
                                 </div>
                             </div>
                             <br>

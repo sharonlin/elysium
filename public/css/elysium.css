@@ -1,7 +1,7 @@
 body {
     padding: 10px;
     font-family: 'HP Simplified';
-    /*background: lightgrey;*/
+    background: #fbfbfb;
     /*font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;*/
 
 }
@@ -18,7 +18,7 @@ body {
 /*h1 { color: #ffffff; font-family: 'Raleway',sans-serif; font-size: 62px; font-weight: 800; line-height: 72px; margin: 0 0 12px; text-align: center; text-transform: uppercase; }*/
 
 h2 {
-    color: #ffffff;
+    color: black;
     font-family: 'HP Simplified', sans-serif;
     font-size: 30px;
     font-weight: 800;
@@ -38,10 +38,14 @@ h2 {
     font-size: 25px;
     font-weight: 500;
     line-height: 36px;
-
 }
 
-
+.header {
+    font-family: 'HP Simplified', sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 36px;
+}
 
 .details-text {
     font-family: 'HP Simplified', sans-serif;
@@ -88,24 +92,24 @@ h2 {
     vertical-align: super;
 }
 
-p {
-    color: #f8f8f8;
-    font-family: 'HP Simplified', sans-serif;
-    font-size: 18px;
-    font-weight: 500;
-    line-height: 32px;
-    margin: 0 0 6px;
-}
+/*p {*/
+    /*color: #f8f8f8;*/
+    /*font-family: 'HP Simplified', sans-serif;*/
+    /*font-size: 18px;*/
+    /*font-weight: 500;*/
+    /*line-height: 32px;*/
+    /*margin: 0 0 6px;*/
+/*}*/
 
-a {
-    color: #c8c8c8;
-    text-decoration: underline;
-}
+/*a {*/
+    /*color: #c8c8c8;*/
+    /*text-decoration: underline;*/
+/*}*/
 
-a:hover {
-    color: #1c1c1c;
-    text-decoration: underline;
-}
+/*a:hover {*/
+    /*color: #1c1c1c;*/
+    /*text-decoration: underline;*/
+/*}*/
 
 .list-group-item {
     border: none;
@@ -124,23 +128,23 @@ a:hover {
 .projectBox {
     display: inline-block;
     float: left;
-    width: 380px;
+    width: 320px;
     height: 280px;
     margin: 25px;
     padding: 20px;
-    background: #428bca;
-    border-width: 10px;
-    border-radius: 10px;
-    border-color: white;
+    /*background: #428bca;*/
+    border-width: 1px;
+    /*border-radius: 10px;*/
+    border-color: black;
     border-style: solid;
     overflow: hidden;
-    box-shadow: 20px 15px 37px rgba(0, 0, 0, 0.06);
-    -webkit-transition: all .2s ease-in-out;
+    /*box-shadow: 20px 15px 37px rgba(0, 0, 0, 0.06);*/
+    /*-webkit-transition: all .2s ease-in-out;*/
 }
 
-.projectBox:hover {
-    -webkit-transform: scale(1.1);
-}
+/*.projectBox:hover {*/
+    /*-webkit-transform: scale(1.1);*/
+/*}*/
 
 .projectBoxFooter {
     float: left;
@@ -361,24 +365,24 @@ ul.nav-wizard.nav-wizard-backnav .active ~ li a:focus {
     width: 95%;
 }
 
-.previous a {
+/*.previous a {*/
 
-    position: relative;
-    left: 50%;
-    width: 140px;
-    height: 40px;
-    padding: 13px !important;
-    margin-left: -250px;
-}
+    /*position: relative;*/
+    /*left: 50%;*/
+    /*width: 140px;*/
+    /*height: 40px;*/
+    /*padding: 13px !important;*/
+    /*margin-left: -250px;*/
+/*}*/
 
-.next a, .finish a {
-    position: relative;
-    right: 35%;
-    width: 140px;
-    height: 40px;
-    padding: 13px !important;
-}
+/*.next a, .finish a {*/
+    /*position: relative;*/
+    /*right: 35%;*/
+    /*width: 140px;*/
+    /*height: 40px;*/
+    /*padding: 13px !important;*/
+/*}*/
 
-.disabledTab .disabledTab {
-    pointer-events: none;
-}
+/*.disabledTab .disabledTab {*/
+    /*pointer-events: none;*/
+/*}*/

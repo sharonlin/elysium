@@ -15,7 +15,7 @@ function D3GFX(options) {
 	var Y_RANGE = 300;
 	var DROP_WIDTH = 377;
 	var DROP_HEIGHT = 471;
-	_addDropShadowFilter(options);
+//	_addDropShadowFilter(options);
 	function _addDropShadowFilter(options) {
 		svg = d3.select(options.elSvg);
 		var defs = svg.append('defs');
@@ -109,20 +109,20 @@ function D3GFX(options) {
 
 		featureExtraInfo.group
 			.attr("class", "extra-info")
-			.attr("transform", "translate(" + xRange(d.x) + "," + yRange(d.score) + ")");
+			.attr("transform", "translate(" + xRange(d.previousReleaseScore) + "," + yRange(d.predictedQuality) + ")");
 
 
 		featureExtraInfo.featureName = d.name;
 		featureExtraInfo.currentScore
 			.attr("x",((DROP_WIDTH *(d.size/120))/4.0) - 10)
 			.attr("y",-((DROP_HEIGHT *(d.size/120)) / 2.0))
-			.text(d.score);
+			.text(d.predictedQuality);
 
-		var scoreGap = d.afterImprovement - d.score;
+		var scoreGap = d.predictedQualityAfterRecommendations - d.predictedQuality;
 		featureExtraInfo.expectedScore
 			.attr("x",0)
 			.attr("y",-1*(Y_RANGE - yRange(scoreGap)) - (DROP_HEIGHT *(d.size/120)/2.0))
-			.text(d.afterImprovement);
+			.text(d.predictedQualityAfterRecommendations);
 
 		featureExtraInfo.expectedScoreDrop
 			.attr("transform", "translate("+(-1*((DROP_WIDTH * (d.size/120))/2))+"," + ((-1*(Y_RANGE - yRange(scoreGap)))  -  (DROP_HEIGHT *(d.size/120)))+ "), scale ("+ (d.size/120) + ")");
@@ -131,20 +131,20 @@ function D3GFX(options) {
 		featureExtraInfo.yLine
 			.attr("x1",0)
 			.attr("y1",0)
-			.attr("x2",-xRange(d.x))
+			.attr("x2",-xRange(d.previousReleaseScore))
 			.attr("y2",0);
 
 		featureExtraInfo.xLine
 			.attr("x1",0)
 			.attr("y1",0)
 			.attr("x2",0)
-			.attr("y2",Y_RANGE-yRange(d.score));
+			.attr("y2",Y_RANGE-yRange(d.predictedQuality));
 
 
 		featureExtraInfo.yLinePrediction
 			.attr("x1",0)
 			.attr("y1", -1*(Y_RANGE - yRange(scoreGap)))
-			.attr("x2",-xRange(d.x))
+			.attr("x2",-xRange(d.previousReleaseScore))
 			.attr("y2",-1*(Y_RANGE - yRange(scoreGap)));
 
 		featureExtraInfo.xLinePrediction
@@ -160,8 +160,8 @@ function D3GFX(options) {
 	}
 
 	function _onFeatureMouseOut(d) {
-		console.log('_onFeatureMouseOut '+ d.module + ' ,isScoreOver '+isScoreOver );
-				featureExtraInfo.group.style("opacity", 0);
+		console.log('_onFeatureMouseOut '+ d.name + ' ,isScoreOver '+isScoreOver );
+		featureExtraInfo.group.style("opacity", 0);
 	}
 
 
@@ -309,7 +309,7 @@ function D3GFX(options) {
 		visGroup.append("text")
 			.attr("x", xRange(100) - 10)
 			.attr("y",  yRange(0) - 20)
-			.text("Low Quality Maintained")
+			.text("Regression")
 			.attr("font-family", "sans-serif")
 			.attr("text-anchor", "end")
 			.attr("font-size", "14px")
@@ -321,9 +321,9 @@ function D3GFX(options) {
 		var drops = visGroup.selectAll("path").data(data);
 		drops.enter()
 			.insert("path")
-			.attr("transform", function(d){return "translate(" + (xRange(d.x)  - ((377 *(d.size/120)) / 2.0))  + "," + (yRange(d.score) -  ((431 *(d.size/120))))+"), scale ("+(d.size/120)+")";})
+			.attr("transform", function(d){return "translate(" + (xRange(d.previousReleaseScore)  - ((377 *(d.size/120)) / 2.0))  + "," + (yRange(d.predictedQuality) -  ((431 *(d.size/120))))+"), scale ("+(d.size/120)+")";})
 			.attr("d", "M292.464,292.479c-31.658,31.625-121.129,121.129-121.129,121.129S85.417,327.69,50.19,292.463c-66.913-66.914-66.922-175.367-0.016-242.274c66.905-66.905,175.391-66.929,242.305-0.015C359.393,117.088,359.369,225.574,292.464,292.479z")
-			.attr("filter", "url(#drop-shadow)")
+//			.attr("filter", "url(#drop-shadow)")
 			.style("fill", function(d,i){return colors[i];})
 			.style("cursor", "pointer")
 			.on('mouseover',_onFeatureMouseOver)
@@ -334,20 +334,7 @@ function D3GFX(options) {
 
 
 
-//		var circles = visGroup.selectAll("circle").data(data);
-//		circles.enter()
-//			.insert("circle")
-//			.attr("cx", function (d) { return xRange (d.x); })
-//			.attr("cy", function (d) { return yRange (d.score); })
-//			.attr("r", "0")
-//			.attr("filter", "url(#drop-shadow)")
-//			.style("fill", function(d,i){return colors[i];})
-//			.style("cursor", "pointer")
-//			.on('mouseover',_onFeatureMouseOver)
-//			.on('mouseout', _onFeatureMouseOut)
-//			.on("click", function() {
-//				_featureClickedListener(featureExtraInfo.featureName);
-//			});
+
 //
 //		circles.transition()
 //			.duration(1000)
@@ -360,8 +347,8 @@ function D3GFX(options) {
 		labels.enter()
 			.insert("text")
 			.attr("class", "featureLabel")
-			.attr("x", function (d) { return xRange (d.x); })
-			.attr("y", function (d) { return yRange (d.score) + 20; })
+			.attr("x", function (d) { return xRange (d.previousReleaseScore); })
+			.attr("y", function (d) { return yRange (d.predictedQuality) + 20; })
 			.text(function(d){return "Feature "+d.name;})
 			.attr("font-family", "sans-serif")
 			.attr("text-anchor", "middle")
@@ -394,8 +381,7 @@ function D3GFX(options) {
 
 		featureExtraInfo.expectedScoreDrop  = featureExtraInfo.group.append("path")
 			.attr("d", "M292.464,292.479c-31.658,31.625-121.129,121.129-121.129,121.129S85.417,327.69,50.19,292.463c-66.913-66.914-66.922-175.367-0.016-242.274c66.905-66.905,175.391-66.929,242.305-0.015C359.393,117.088,359.369,225.574,292.464,292.479z")
-			.attr("filter", "url(#drop-shadow)")
-//			.attr("transform", function(d){return "translate(" + (xRange(d.x)  - ((377 *(d.size/120)) / 2.0))  + "," + (yRange(d.score) -  ((431 *(d.size/120))))+"), scale ("+(d.size/120)+")";})
+//			.attr("filter", "url(#drop-shadow)")
 			.style("fill", "white")
 			.style("opacity", 0.8)
 			.style("stroke", "orange")
